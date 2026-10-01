@@ -553,7 +553,7 @@ selecione o conteúdo dela (ou use o GitHub Desktop).
 
 ### Antes de enviar: atualize a URL
 
-Troque `https://brunoscrock.github.io/scrocksys/` pela URL real do seu
+Troque `https://brunoscrock.github.io/ScrockSys/` pela URL real do seu
 repositório em **três** lugares:
 
 | Arquivo | O que trocar |

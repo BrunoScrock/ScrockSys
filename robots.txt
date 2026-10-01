@@ -27,4 +27,4 @@ Disallow: /.git/
 Disallow: /*.json$
 Disallow: /README.md
 
-Sitemap: https://brunoscrock.github.io/scrocksys/sitemap.xml
+Sitemap: https://brunoscrock.github.io/ScrockSys/sitemap.xml
