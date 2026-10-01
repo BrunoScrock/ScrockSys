@@ -150,10 +150,49 @@ cidade:   "[INSERIR CIDADE]"     ->  item de contato é ocultado
 
 Preencha com dados reais e o conteúdo aparece automaticamente.
 
+### Marca em duas cores
+
+O nome aparece no cabeçalho e no rodapé em duas cores:
+
+| Parte | Texto | Cor | Peso |
+| --- | --- | --- | --- |
+| `.marca__nome-1` | `Scrock` | azul escuro `#0a1a3c` | **negrito** (800) |
+| `.marca__nome-2` | `Sys` | azul claro `#4d85ff` | normal (500) |
+
+**Para trocar as palavras:** edite `marcaParte1` e `marcaParte2` no `config.js`.
+
+**Para trocar as cores:** edite as duas linhas do bloco `MARCA EM DUAS PARTES`
+no `css/style.css` (logo depois de `.marca__nome`).
+
+No rodapé, que tem fundo escuro, a primeira parte vira branca para continuar
+legível. Isso está em `.marca--rodape .marca__nome-1`.
+
+### Arquivos de logo
+
+A logo oficial fica em `assets/images/logo/`:
+
+| Arquivo | Uso |
+| --- | --- |
+| `logo-oficial.jpg` | Arquivo original (não é usado pelo site) |
+| `logo-oficial-128.webp` | **Usada no cabeçalho e no rodapé** |
+| `logo-oficial-256.webp` | Versão maior, para materiais impressos |
+| `logo-oficial-512.webp` | Versão grande, para documentos |
+| `favicon-16.png` / `favicon-32.png` | Ícone da aba do navegador |
+| `favicon-192.png` | Ícone do PWA (site instalado no celular) |
+| `apple-touch-icon.png` | Ícone ao salvar no iPhone/iPad |
+
+As versões Webp já vêm com **fundo transparente**, então a mesma logo funciona
+no cabeçalho claro e no rodapé escuro.
+
+**Para trocar a logo:** coloque a nova imagem na pasta, recorte o espaço vazio e
+tire o fundo branco — o site precisa de transparência para a logo funcionar nos
+dois fundos. Os tamanhos usados pelo site são 128px (cabeçalho e rodapé), 32px
+e 16px (favicon).
+
 ### Ícones disponíveis
 
-Os ícones são SVGs internos (sem biblioteca externa). Para usar um ícone,
-informe o nome:
+Os ícones da interface são SVGs internos (sem biblioteca externa). Para usar um
+ícone, informe o nome:
 
 ```
 monitor, alvo, sistema, paleta, marca, ferramenta, site, celular, busca,
@@ -699,15 +738,19 @@ ScrockSys/
 │   ├── search.js               Busca e filtros do portfólio
 │   └── ui.js                   Menu, lightbox, toasts, comparador, reveal
 │
-└── assets/
-    ├── favicon/
-    │   └── favicon.svg
-    ├── icons/
-    │   └── logo.svg
-    └── images/
+├── assets/
+    ├── images/
         ├── logo/
+        │   ├── logo-oficial.jpg          Logo original (não usada pelo site)
+        │   ├── logo-oficial-128.webp     Usada no cabeçalho e rodapé
+        │   ├── logo-oficial-256.webp     Versão maior
+        │   ├── logo-oficial-512.webp     Versão grande
+        │   ├── favicon-16.png            Ícone da aba
+        │   ├── favicon-32.png            Ícone da aba (HD)
+        │   ├── favicon-192.png           Ícone do PWA
+        │   └── apple-touch-icon.png      Ícone no iPhone
         ├── hero/
-        │   └── og-cover.svg            Imagem de compartilhamento
+        │   └── og-cover.png              Imagem de compartilhamento
         ├── portfolio/
         │   ├── sites/                 6 sites de exemplo
         │   ├── sistemas/              3 sistemas de exemplo

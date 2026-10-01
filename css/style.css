@@ -379,6 +379,10 @@ ul, ol { list-style: none; }
   background: var(--grad-principal);
   color: #fff;
   box-shadow: var(--s-azul);
+  /* ESSENCIAL: sem isto, a faixa de brilho do ::after escapa do botão
+     no hover (chegava a vazar ~300px sobre a página e sobre o botão
+     vizinho). O overflow corta o brilho no formato arredondado. */
+  overflow: hidden;
 }
 
 /* Brilho que atravessa o botão no hover */
@@ -544,15 +548,26 @@ ul, ol { list-style: none; }
   flex: none;
 }
 
+/* --------------------------------------------------------------------------
+   LOGO
+   A logo oficial é uma imagem PNG/WebP com fundo transparente
+   (assets/images/logo/logo-oficial-128.webp), então funciona tanto no
+   cabeçalho claro quanto no rodapé escuro.
+   -------------------------------------------------------------------------- */
 .marca__logo {
-  width: 38px;
-  height: 38px;
+  display: grid;
+  place-items: center;
   flex: none;
-  border-radius: 11px;
-  box-shadow: 0 5px 14px rgba(29, 92, 255, .28);
   transition: transform var(--t-medio);
 }
-.marca:hover .marca__logo { transform: rotate(-6deg) scale(1.05); }
+
+.marca__logo img {
+  display: block;
+  width: auto;
+  height: 42px;
+}
+
+.marca:hover .marca__logo { transform: rotate(-5deg) scale(1.06); }
 
 .marca__texto { display: flex; flex-direction: column; line-height: 1.15; }
 
@@ -560,8 +575,24 @@ ul, ol { list-style: none; }
   font-family: var(--fonte-display);
   font-size: 1.06rem;
   font-weight: 800;
-  letter-spacing: .04em;
+  letter-spacing: -0.01em;
   color: var(--tinta);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   MARCA EM DUAS PARTES
+   "Scrock" em azul escuro com negrito + "Sys" em azul claro sem negrito.
+   Para mudar as cores, altere apenas estas duas linhas.
+   -------------------------------------------------------------------------- */
+.marca__nome-1 {
+  color: var(--azul-escuro);
+  font-weight: 800;
+}
+
+.marca__nome-2 {
+  color: var(--azul-claro);
+  font-weight: 500;
 }
 
 .marca__assinatura {
@@ -3415,7 +3446,11 @@ ul, ol { list-style: none; }
   padding-bottom: clamp(28px, 4vw, 46px);
 }
 
+/* No rodapé o fundo é escuro: a primeira parte fica branca para
+   continuar legível, mantendo o mesmo contraste de pesos. */
 .marca--rodape .marca__nome { color: #fff; }
+.marca--rodape .marca__nome-1 { color: #fff; font-weight: 800; }
+.marca--rodape .marca__nome-2 { color: var(--azul-claro); font-weight: 500; }
 .marca--rodape .marca__assinatura { color: rgba(255, 255, 255, .5); }
 
 .rodape__descricao {
@@ -3763,7 +3798,11 @@ ul, ol { list-style: none; }
   .hero__acoes,
   .hero__selos { justify-content: center; }
   .hero__linha:nth-child(2) { padding-left: 0; }
-  .hero__visual { max-width: 540px; margin-inline: auto; }
+  /* `width: 100%` é obrigatório: com apenas `margin-inline: auto`, o
+     item do grid encolhe para "fit-content" e o `width: 100%` do filho
+     (.hero__cena) passa a resolver contra uma largura indefinida,
+     resultando em 0x0 — a composição do Hero inteiro sumia no celular. */
+  .hero__visual { width: 100%; max-width: 540px; margin-inline: auto; }
 
   .grade_sobre { grid-template-columns: 1fr; }
   .sobre__visual { max-width: 540px; margin-inline: auto; width: 100%; }
@@ -3864,6 +3903,57 @@ ul, ol { list-style: none; }
   .flutuante--dashboard { right: 0; bottom: 20%; width: 48%; }
 }
 
+/* --------------------------------------------------------------------------
+   HERO NO CELULAR — recomposição da cena
+   --------------------------------------------------------------------------
+   No celular a cena quadrada ficava alta demais e os elementos se
+   atropelavam (o celular ficava atrás do painel e a base do notebook
+   saía da caixa). Aqui a cena é limitada a 320px e cada peça é
+   reposicionada e redimensionada para caber sem cortes.
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .hero__cena {
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Notebook: um pouco menor e mais alto, para a base aparecer */
+  .mockup-notebook {
+    width: 78%;
+    top: 9%;
+  }
+
+  /* Celular: menor e slightly mais baixo, sem ficar atrás do painel */
+  .mockup-celular {
+    width: 25%;
+    top: 26%;
+    right: 0;
+  }
+
+  /* Painel: sobreposto à parte de baixo, sem cobrir o celular */
+  .flutuante--dashboard {
+    right: 0;
+    bottom: 6%;
+    width: 50%;
+  }
+
+  .flutuante--seo {
+    left: 0;
+    top: 1%;
+    padding: 8px 12px;
+  }
+
+  /* Textos menores para caber */
+  .flutuante--seo strong,
+  .flutuante--avaliacao strong { font-size: .66rem; }
+  .flutuante--seo small,
+  .flutuante--avaliacao small { font-size: .56rem; }
+
+  /*menos espaço entre o texto e a cena */
+  .hero__grade { gap: clamp(22px, 5vw, 34px); }
+  .hero__selos { margin-bottom: 4px; }
+}
+
 /* Celular */
 @media (max-width: 560px) {
   .secao__cabecalho { text-align: left; }
@@ -3913,12 +4003,17 @@ ul, ol { list-style: none; }
   .lightbox__caixa { padding: 16px; border-radius: var(--r-lg); }
   .lightbox__legenda .botao { width: 100%; }
   .lightbox__nav { width: 38px; height: 38px; }
+
+  /* Evita que o título do painel quebre em duas linhas */
+  .flutuante--dashboard .flutuante__nome { font-size: .54rem; }
+  .flutuante__topo { padding: 6px 8px; }
+  .flutuante__corpo { padding: 9px; }
 }
 
 /* Very small (320px) */
 @media (max-width: 340px) {
   .marca__nome { font-size: .95rem; }
-  .marca__logo { width: 34px; height: 34px; }
+  .marca__logo img { height: 34px; }
   .hero__acoes .botao { padding: 14px 16px; font-size: .78rem; }
   .garantia { padding: 12px; }
   .incluido { padding: 16px; gap: 11px; }

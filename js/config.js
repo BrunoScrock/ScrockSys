@@ -35,7 +35,20 @@ window.CONFIG = {
   nome: "ScrockSys",
 
   /* Frase curta exibida ao lado da marca (cabeçalho e rodapé) */
-  marca: "SCROCKSYS",
+  marca: "ScrockSys",
+
+  /* ---------------------------------------------------------------
+     NOME DA MARCA EM DUAS PARTES (cabeçalho e rodapé)
+
+     A marca é exibida em duas cores:
+       parte 1 -> azul escuro, em negrito   ("Scrock")
+       parte 2 -> azul claro, sem negrito   ("Sys")
+
+     Troque as palavras aqui. As cores de cada parte ficam no
+     css/style.css, em .marca__nome-1 e .marca__nome-2.
+     --------------------------------------------------------------- */
+  marcaParte1: "Scrock",
+  marcaParte2: "Sys",
 
   /* Assinatura da empresa */
   assinatura: "Sites • Sistemas • Design",

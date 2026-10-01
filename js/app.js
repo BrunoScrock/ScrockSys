@@ -1333,6 +1333,28 @@
     });
   }
 
+  /**
+   * Monta o nome da marca em duas partes: "Scrock" (azul escuro, negrito)
+   * e "Sys" (azul claro, sem negrito). Os textos vêm do config.js.
+   */
+  function aplicarMarca() {
+    U.$$("[data-marca]").forEach(function (el) {
+      var texto = CONFIG["marcaParte" + el.dataset.marca];
+
+      if (typeof texto === "string" && texto.length) {
+        el.textContent = texto;
+      } else {
+        // Sem configuração: mostra a marca inteira numa cor só
+        var partes = U.$$("[data-marca]");
+
+        if (partes.length === 2) {
+          partes[0].textContent = CONFIG.marca || "";
+          if (partes[1]) partes[1].textContent = "";
+        }
+      }
+    });
+  }
+
   /* ==================================================================
      17. NAVEGAÇÃO SUAVE
      ================================================================== */
@@ -1407,6 +1429,7 @@
   function preparar() {
     aplicarSeo();
     aplicarTextosDoConfig();
+    aplicarMarca();
 
     montarTituloHero();
     montarSobre();
