@@ -1,0 +1,42 @@
+# Arquivos e pastas que não devem ir para o Git
+# (o GitHub Pages não precisa deles para publicar o site)
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Node (o site não usa Node, mas se você testar algo localmente)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build e cache
+dist/
+build/
+.cache/
+*.cache
+
+# Temporários
+*.tmp
+*.bak
+*.orig
+tmp/
+temp/

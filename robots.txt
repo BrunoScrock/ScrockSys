@@ -1,0 +1,30 @@
+# robots.txt — ScrockSys
+# Site estático hospedado no GitHub Pages.
+#
+# IMPORTANTE
+# Antes de publicar, troque a URL abaixo pela URL real do site.
+# A mesma URL precisa estar em:
+#   1. robots.txt (aqui)
+#   2. sitemap.xml
+#   3. js/config.js  ->  siteUrl
+#   4. index.html    ->  <link rel="canonical">
+
+User-agent: *
+Allow: /
+
+# Nada precisa ficar escondido — todas as páginas são públicas.
+Disallow:
+
+# Rastreamento normal dos buscadores
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sem indexação de arquivos de desenvolvimento
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /README.md
+
+Sitemap: https://brunoscrock.github.io/scrocksys/sitemap.xml

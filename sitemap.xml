@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — ScrockSys
+
+  Este site é de página única (one-page), com todas as seções na index.html.
+  Por isso o sitemap tem apenas a URL principal.
+  Se você criar páginas extras (ex.: /obrigado.html, /politica.html),
+  adicione novas <url> aqui.
+
+  TROQUE A URL abaixo pela URL real antes de publicar.
+  A mesma URL precisa estar em robots.txt, sitemap.xml e js/config.js (siteUrl).
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://brunoscrock.github.io/scrocksys/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

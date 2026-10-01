@@ -1,0 +1,228 @@
+# ScrockSys
+
+> Desenvolvimento de sites, sistemas web e design gráfico para empresas.
+> Sites profissionais, landing pages, interfaces, identidade visual e manutenção.
+
+Site institucional e portfólio comercial da **ScrockSys**. Página única
+(estática), sem backend, pronta para hospedagem gratuita no GitHub Pages.
+
+- **Nome:** ScrockSys
+- **Assinatura:** Sites • Sistemas • Design
+- **Localização:** [INSERIR CIDADE]
+- **WhatsApp:** [INSERIR WHATSAPP]
+- **E-mail:** [INSERIR E-MAIL]
+- **URL:** https://brunoscrock.github.io/scrocksys/
+
+---
+
+## O que este site oferece
+
+### Serviços
+
+| Serviço | Descrição |
+| --- | --- |
+| Sites profissionais | Sites institucionais, comerciais e personalizados, desenvolvidos do zero. |
+| Landing pages | Páginas focadas em divulgação e conversão, para campanhas e promoções. |
+| Sistemas web | Sistemas personalizados para controle, organização e acompanhamento de processos. |
+| Interfaces | Desenvolvimento de interfaces para sistemas, painéis e aplicações internas. |
+| Design gráfico | Banners, artes, peças comerciais, materiais de divulgação e edição de imagens. |
+| Identidade visual | Logo, paleta de cores, tipografia e padronização dos materiais da empresa. |
+| Manutenção de sites | Atualizações, correções e alterações de conteúdo em sites já publicados. |
+| Soluções personalizadas | Desenvolvimento sob medida para o processo específico de cada empresa. |
+
+### O que está incluído em um site
+
+- Site personalizado, seguindo a identidade da empresa
+- Layout responsivo para computador, tablet e celular
+- Estrutura preparada com boas práticas básicas de SEO
+- Apresentação clara de serviços e informações
+- Galeria de fotos com os trabalhos realizados
+- Botão de WhatsApp para contato direto
+- Botão de avaliação para o Google
+- Hospedagem gratuita quando o projeto é compatível com hospedagem estática
+- Orientação sobre registro de domínio próprio (.com.br)
+- Manutenção e atualização de conteúdo
+
+### Como funciona o desenvolvimento
+
+1. **Conversa inicial** — entender a empresa, os serviços e o objetivo do projeto.
+2. **Definição do projeto** — estrutura das páginas, conteúdos, imagens e funcionalidades.
+3. **Desenvolvimento** — construção do layout, do código e do conteúdo.
+4. **Apresentação** — o projeto é apresentado para avaliação.
+5. **Ajustes** — correções de textos, imagens, cores e posições.
+6. **Publicação** — publicação do site na internet, no endereço definido.
+
+### Investimento
+
+| Item | Valor de referência |
+| --- | --- |
+| Desenvolvimento | A partir de R$ 350,00 |
+| Landing page | A partir de R$ 350,00 |
+| Site institucional | Sob orçamento (depende do escopo) |
+| Sistema web | Sob orçamento (depende da arquitetura) |
+| Domínio .com.br | Aproximadamente R$ 40,00 por ano |
+| Hospedagem | R$ 0,00 em projetos estáticos compatíveis |
+
+**Sobre o valor de desenvolvimento:** o preço varia conforme a quantidade de
+páginas, funcionalidades, volume de conteúdo e nível de personalização.
+O valor final é sempre informado antes do início do projeto.
+
+**Pagamento:** possibilidade de parcelamento em até 3x no cartão, conforme
+negociação.
+
+**Domínio:** tem custo próprio, separado do desenvolvimento, e é registrado em
+nome da própria empresa.
+
+**Hospedagem:** projetos compatíveis com hospedagem estática podem usar
+hospedagem gratuita (GitHub Pages e outras plataformas). Sistemas que precisam
+de back-end, banco de dados ou infraestrutura específica exigem hospedagem
+própria, orçada separadamente.
+
+### Diferenciais
+
+Atendimento direto, projeto personalizado, responsividade, visual profissional,
+SEO básico, WhatsApp integrado, atualizações futuras e soluções sob medida.
+
+### Sua empresa já está na internet?
+
+Comparação entre os dois cenários, sem promessas de resultado financeiro:
+
+**Sem site** — o cliente encontra apenas posts e stories; informações ficam
+espalhadas; menor controle da apresentação; dificuldade para mostrar a lista
+completa de serviços; dependência total das redes sociais.
+
+**Com site** — apresentação profissional; serviços organizados; informações
+centralizadas; portfólio com fotos; botão de WhatsApp; localização e horários;
+mais controle sobre o que o cliente vê.
+
+> Ter um site não garante aumento de clientes nem resultado financeiro. O que
+> ele oferece é controle, organização e uma apresentação consistente.
+
+---
+
+## Estrutura do site
+
+```
+Hero
+ ↓
+Sobre
+ ↓
+Soluções digitais (serviços)
+ ↓
+O que está incluído
+ ↓
+Sistemas web personalizados
+ ↓
+Portfólio de sites (com filtros)
+ ↓
+Antes e depois
+ ↓
+Design gráfico
+ ↓
+Sua empresa já está na internet?
+ ↓
+Mais do que um site (diferenciais)
+ ↓
+Como funciona o desenvolvimento
+ ↓
+Quanto custa criar um site
+ ↓
+Vamos criar seu projeto (contato)
+ ↓
+Rodapé
+```
+
+---
+
+## Como pedir um orçamento
+
+Há três caminhos, todos abrindo o WhatsApp com a mensagem já montada:
+
+1. Botão **"Solicitar orçamento"** no Hero, no cabeçalho e no menu do celular.
+2. Botão flutuante fixo no canto da tela ("Falar sobre meu projeto").
+3. Formulário na seção de contato: ao enviar, o site monta a mensagem com nome,
+   empresa, serviço desejado e a mensagem digitada, e abre o WhatsApp.
+
+A mensagem gerada pelo formulário segue este modelo:
+
+> Olá! Meu nome é {nome} e sou da empresa {empresa}. Tenho interesse em
+> {servico}. Gostaria de conversar sobre um orçamento.
+
+O formulário **não envia dados para nenhum servidor**: a mensagem é montada no
+navegador do visitante e aberta diretamente no WhatsApp.
+
+---
+
+## Portfólio
+
+Projetos apresentados como exemplo da estrutura do site. Nomes, categorias e
+descrições ficam todos em `js/config.js`.
+
+**Sites desenvolvidos:** INOVE Mecânica, Quirino Barbearia, FF Pisos,
+Big Tattoo, GL Estofaria, Hidratex.
+
+**Sistemas web:** Gestão de Lotações, Dashboard Administrativo, Sistema de
+Formulários.
+
+**Design gráfico:** logotipo e marca, identidade visual, banner promocional,
+post para social media, arte comercial, edição de imagem, cartão de visita e
+capa para Facebook.
+
+**Antes e depois:** oficina mecânica, barbearia, empresa de pisos e
+identidade visual.
+
+---
+
+## Stack e arquitetura
+
+- HTML5 semântico
+- CSS3 com custom properties, grid, flexbox e `clamp()`
+- JavaScript modular (sem framework, sem bibliotecas externas)
+- Canvas para a animação de partículas do Hero
+- WebP/SVG para as imagens, com `loading="lazy"`
+- Nenhum backend, PHP, Node.js ou banco de dados
+
+### Arquivos JavaScript
+
+| Arquivo | Responsabilidade |
+| --- | --- |
+| `js/config.js` | Toda a configuração editável: marca, contato, preços, serviços, portfólio. |
+| `js/app.js` | Inicialização e montagem das seções a partir do config. |
+| `js/utils.js` | Funções auxiliares: WhatsApp, telefone, validação, scroll, debounce. |
+| `js/storage.js` | `localStorage`: filtro preferido, favoritos. Nada de dado pessoal. |
+| `js/classifier.js` | Classifica projetos em SITE / SISTEMA / DESIGN / LANDING_PAGE. |
+| `js/api.js` | Camada de dados preparada para integrações futuras. |
+| `js/search.js` | Busca e filtros do portfólio. |
+| `js/ui.js` | Menu, lightbox, toasts, comparador antes/depois, reveal, loader. |
+
+---
+
+## Acessibilidade
+
+- HTML semântico com hierarquia correta de headings
+- Textos alternativos em todas as imagens
+- Navegação completa por teclado, com foco visível
+- Comparador antes/depois operável por setas, Home e End
+- Lightbox com Escape para fechar e setas para navegar
+- Menu do celular com foco preso enquanto aberto
+- `prefers-reduced-motion` desativa animações
+- Contraste adequado em textos e botões
+
+---
+
+## Formatos de imagem aceitos
+
+O site aceita `.svg`, `.webp`, `.jpg` e `.png` nas pastas do portfólio.
+Mantenha a extensão no `js/config.js` igual ao arquivo real.
+
+Para o comparador "antes e depois", as duas imagens precisam ter **o mesmo
+enquadramento e a mesma proporção** (o padrão é 16:11), senão a comparação por
+arraste fica distorcida.
+
+---
+
+## Observação sobre hospedagem
+
+Este site é 100% estático e pode ser hospedado gratuitamente no GitHub Pages.
+Sistemas web com back-end e banco de dados não funcionam em hospedagem
+estática gratuita — nesse caso a hospedagem é específica e orçada à parte.

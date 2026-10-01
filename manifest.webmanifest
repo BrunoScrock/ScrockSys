@@ -1,0 +1,26 @@
+{
+  "name": "ScrockSys",
+  "short_name": "ScrockSys",
+  "description": "Desenvolvimento de sites, sistemas web e design gráfico para empresas.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fafbfd",
+  "theme_color": "#0a1a3c",
+  "icons": [
+    {
+      "src": "assets/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/logo/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

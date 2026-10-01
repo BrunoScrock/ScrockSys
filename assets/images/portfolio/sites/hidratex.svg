@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+<defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00c2b2"/><stop offset="1" stop-color="#1d5cff"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00c2b2" stop-opacity=".16"/><stop offset="1" stop-color="#1d5cff" stop-opacity=".09"/></linearGradient>
+  </defs>
+  
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <rect width="1200" height="54" fill="#f7f9fc"/>
+  <circle cx="26" cy="27" r="6" fill="#ffb4ab"/>
+  <circle cx="46" cy="27" r="6" fill="#ffdfa1"/>
+  <circle cx="66" cy="27" r="6" fill="#a8e6bd"/>
+  <rect x="96" y="16" width="240" height="22" rx="11" fill="#eef2f8"/>
+  <text x="120" y="31" font-family="Arial,sans-serif" font-size="11" fill="#8494ad">www.suaempresa.com.br</text>
+  <line x1="0" y1="54" x2="1200" y2="54" stroke="#eef2f8" stroke-width="1"/>
+  
+  <rect x="48" y="18" width="122" height="18" rx="5" fill="url(#g1)"/>
+  <text x="182" y="32" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#0a1a3c" letter-spacing="2">HIDRATEX</text>
+  <rect x="900" y="22" width="62" height="10" rx="5" fill="#eef2f8"/>
+  <rect x="978" y="22" width="62" height="10" rx="5" fill="#eef2f8"/>
+  <rect x="1056" y="22" width="62" height="10" rx="5" fill="#eef2f8"/>
+  <rect x="1140" y="16" width="60" height="22" rx="11" fill="url(#g1)"/>
+  <rect x="0" y="54" width="1200" height="360" fill="url(#g2)"/>
+  <rect x="60" y="126" width="330" height="24" rx="6" fill="#0a1a3c"/>
+  <rect x="60" y="162" width="250" height="24" rx="6" fill="#00c2b2"/>
+  <rect x="60" y="214" width="420" height="9" rx="4.5" fill="#8494ad" opacity=".5"/>
+  <rect x="60" y="234" width="360" height="9" rx="4.5" fill="#8494ad" opacity=".38"/>
+  <rect x="60" y="272" width="142" height="42" rx="21" fill="url(#g1)"/>
+  <rect x="216" y="272" width="132" height="42" rx="21" fill="none" stroke="#00c2b2" stroke-width="2"/>
+  <rect x="850" y="120" width="290" height="230" rx="16" fill="#ffffff" stroke="#e3eaf4"/>
+  <rect x="878" y="144" width="150" height="9" rx="4.5" fill="#0a1a3c" opacity=".45"/>
+  <rect x="878" y="176" width="234" height="120" rx="10" fill="url(#g1)" opacity=".14"/>
+  <circle cx="995" cy="236" r="30" fill="url(#g1)" opacity=".5"/>
+  <rect x="878" y="312" width="200" height="8" rx="4" fill="#8494ad" opacity=".32"/>
+  <text x="60" y="470" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#0a1a3c" letter-spacing="1">GALERIA DE TRABALHOS</text>
+  <rect x="60" y="494" width="252" height="180" rx="12" fill="url(#g1)" opacity=".16"/>
+  <circle cx="186" cy="566" r="26" fill="#00c2b2" opacity=".45"/>
+  <rect x="84" y="614" width="180" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/>
+  <rect x="84" y="634" width="130" height="7" rx="3.5" fill="#8494ad" opacity=".25"/><rect x="332" y="494" width="252" height="180" rx="12" fill="#e8eef7" opacity=".8"/>
+  <circle cx="458" cy="566" r="26" fill="#8494ad" opacity=".28"/>
+  <rect x="356" y="614" width="180" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/>
+  <rect x="356" y="634" width="130" height="7" rx="3.5" fill="#8494ad" opacity=".25"/><rect x="604" y="494" width="252" height="180" rx="12" fill="#e8eef7" opacity=".8"/>
+  <circle cx="730" cy="566" r="26" fill="#8494ad" opacity=".28"/>
+  <rect x="628" y="614" width="180" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/>
+  <rect x="628" y="634" width="130" height="7" rx="3.5" fill="#8494ad" opacity=".25"/><rect x="876" y="494" width="252" height="180" rx="12" fill="#e8eef7" opacity=".8"/>
+  <circle cx="1002" cy="566" r="26" fill="#8494ad" opacity=".28"/>
+  <rect x="900" y="614" width="180" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/>
+  <rect x="900" y="634" width="130" height="7" rx="3.5" fill="#8494ad" opacity=".25"/>
+  <rect x="0" y="770" width="1200" height="130" fill="#f7f9fc"/>
+  <line x1="0" y1="770" x2="1200" y2="770" stroke="#eef2f8"/>
+  <rect x="60" y="808" width="130" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/><rect x="360" y="808" width="130" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/><rect x="660" y="808" width="130" height="9" rx="4.5" fill="#0a1a3c" opacity=".3"/>
+  <rect x="60" y="832" width="150" height="26" rx="13" fill="url(#g1)" opacity=".85"/>
+</svg>

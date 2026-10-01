@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1a3c" id="metaThemeColor">
+<meta name="color-scheme" content="light">
+
+<title>Desenvolvimento de Sites, Sistemas e Design Gráfico | ScrockSys</title>
+<meta name="description" content="Criação de sites profissionais, sistemas web e design gráfico para empresas. Sites institucionais, landing pages, interfaces, identidade visual e manutenção.">
+<meta name="author" content="ScrockSys">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" id="linkCanonical" href="">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ScrockSys">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Desenvolvimento de Sites, Sistemas e Design Gráfico | ScrockSys">
+<meta property="og:description" content="Criação de sites profissionais, sistemas web e design gráfico para empresas.">
+<meta property="og:url" id="ogUrl" content="">
+<meta property="og:image" id="ogImage" content="assets/images/hero/og-cover.svg">
+<meta property="og:image:alt" content="ScrockSys — Sites, Sistemas e Design">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desenvolvimento de Sites, Sistemas e Design Gráfico | ScrockSys">
+<meta name="twitter:description" content="Criação de sites profissionais, sistemas web e design gráfico para empresas.">
+<meta name="twitter:image" id="twImage" content="assets/images/hero/og-cover.svg">
+
+<link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon/favicon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+<!-- ==========================================================================
+     BIBLIOTECA DE ÍCONES (SVG sprite)
+     Usados por toda a página. Não são bibliotecas externas.
+     ========================================================================== -->
+<svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8.5 20.5h7M12 16.5v4"/></symbol>
+    <symbol id="i-alvo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-sistema" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="6" rx="1.6"/><rect x="2.5" y="14" width="19" height="6" rx="1.6"/><path d="M6 7h.01M6 17h.01M10 7h4M10 17h4"/></symbol>
+    <symbol id="i-paleta" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.9 1.8-1.9 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H16a5 5 0 0 0 5-5c0-3.9-4-7-9-7Z"/><circle cx="7.5" cy="11.5" r="1.1"/><circle cx="11" cy="7.8" r="1.1"/><circle cx="15.5" cy="8.6" r="1.1"/></symbol>
+    <symbol id="i-marca" viewBox="0 0 24 24"><path d="m12 2.6 2.6 5.9 6.4.7-4.8 4.3 1.4 6.3L12 16.6 6.4 19.8l1.4-6.3L3 9.2l6.4-.7Z"/></symbol>
+    <symbol id="i-ferramenta" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5l-8.4 8.4a2.6 2.6 0 0 1-3.7-3.7Z"/><path d="M14.7 6.3 17 4a4 4 0 0 1 3 3l-2.3 2.3"/></symbol>
+    <symbol id="i-site" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19M5.5 6.2h.01M8 6.2h.01M10.5 6.2h.01"/><path d="M6 12.5h6M6 16h9"/></symbol>
+    <symbol id="i-celular" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M10.6 5.4h2.8M11 18.6h2"/></symbol>
+    <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-servicos" viewBox="0 0 24 24"><path d="M9 6.5h10M9 12h10M9 17.5h10"/><circle cx="4.6" cy="6.5" r="1.6"/><circle cx="4.6" cy="12" r="1.6"/><circle cx="4.6" cy="17.5" r="1.6"/></symbol>
+    <symbol id="i-galeria" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><circle cx="8.3" cy="10" r="1.8"/><path d="m3 17 4.8-4.5a2 2 0 0 1 2.7 0L15 17M13 15l2.3-2.2a2 2 0 0 1 2.7 0L20 15"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5 5 16.3A8 8 0 1 1 8.1 19.4Z"/><path d="M9.2 8.4c.3-.6.6-.6.9-.6h.7c.2 0 .5 0 .7.6l.8 1.9c.1.3 0 .5-.1.7l-.4.5c-.1.2-.3.4-.1.7.4.7 1.1 1.4 1.9 1.8.3.2.5.1.7-.1l.5-.6c.2-.2.4-.3.7-.2l1.9.9c.3.1.5.3.5.5 0 .6-.3 1.4-.7 1.7-.4.3-1 .5-1.6.4-1.2-.2-2.6-.8-4-2-1.4-1.2-2.5-2.8-3-4.2-.3-.7-.3-1.3.1-1.7Z" stroke-width="1"/></symbol>
+    <symbol id="i-avaliacao" viewBox="0 0 24 24"><path d="m12 3.2 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.4l5.9-.9Z"/><path d="m9.2 14.4 1.9 1.9 3.7-3.7"/></symbol>
+    <symbol id="i-hospedagem" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="6" rx="1.6"/><rect x="2.5" y="14" width="19" height="6" rx="1.6"/><path d="M6.5 7h.01M6.5 17h.01M10.5 7H14M10.5 17h3.5"/></symbol>
+    <symbol id="i-dominio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2M12 3.4c4.4 4.6 4.4 12.6 0 17.2-4.4-4.6-4.4-12.6 0-17.2Z"/></symbol>
+    <symbol id="i-manutencao" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></symbol>
+    <symbol id="i-painel" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="17" rx="2"/><path d="M2.5 9h19M9 9v11.5"/><path d="M12.5 12.5h5M12.5 16.5h3"/></symbol>
+    <symbol id="i-dashboard" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><rect x="5" y="12" width="3.4" height="6"/><rect x="10.3" y="8" width="3.4" height="10"/><rect x="15.6" y="4" width="3.4" height="14"/></symbol>
+    <symbol id="i-formulario" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.2"/><path d="M8 8h8M8 12h8M8 16h4.5"/></symbol>
+    <symbol id="i-controle" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.4"/><path d="M7 12.2 10.4 15.6 17 9"/></symbol>
+    <symbol id="i-atendimento" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0v1.5a2 2 0 0 1-2 2h-1.5v-4H18"/><path d="M4 13H2.8A1.8 1.8 0 0 0 1 14.8v1.4A1.8 1.8 0 0 0 2.8 18H4Z"/><path d="M20 18v1.2a2.3 2.3 0 0 1-2.3 2.3H12"/></symbol>
+    <symbol id="i-camadas" viewBox="0 0 24 24"><path d="m12 2.8 9 4.7-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7M3 17.2l9 4.7 9-4.7"/></symbol>
+    <symbol id="i-olho" viewBox="0 0 24 24"><path d="M1.8 12S5.5 5.2 12 5.2 22.2 12 22.2 12 18.5 18.8 12 18.8 1.8 12 1.8 12Z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+    <symbol id="i-atualizacao" viewBox="0 0 24 24"><path d="M4 7.5A8 8 0 0 1 18.4 6L20 7.6"/><path d="M20 3v4.6h-4.6"/><path d="M20 16.5A8 8 0 0 1 5.6 18L4 16.4"/><path d="M4 21v-4.6h4.6"/></symbol>
+    <symbol id="i-codigo" viewBox="0 0 24 24"><path d="m8.5 8-4.5 4 4.5 4M15.5 8l4.5 4-4.5 4M13.6 4.5l-3.2 15"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+    <symbol id="i-seta-direita" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-seta-baixo" viewBox="0 0 24 24"><path d="M12 4.5v15M6 13.5l6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+    <symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5 11 13"/><path d="M18 14.5v4a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 18.6V7.8A1.6 1.6 0 0 1 5.6 6.2h4"/></symbol>
+    <symbol id="i-arraste" viewBox="0 0 24 24"><path d="m9 6-4.5 6L9 18M15 6l4.5 6L15 18"/></symbol>
+    <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M6.2 3.5h3l1.6 4-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2 4 1.6v3a2 2 0 0 1-2.2 2C10.6 19.2 4.8 13.4 4.2 5.7a2 2 0 0 1 2-2.2Z"/></symbol>
+    <symbol id="i-email" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.2"/><path d="m3.4 7 8.6 6 8.6-6"/></symbol>
+    <symbol id="i-local" viewBox="0 0 24 24"><path d="M12 21.5s7-6.3 7-11.1a7 7 0 1 0-14 0c0 4.8 7 11.1 7 11.1Z"/><circle cx="12" cy="10.2" r="2.6"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7v5.3l3.4 2"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.1" cy="6.9" r="1.1" stroke-width="1.4"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9.2 20.4c-4.4 1.3-4.4-2.3-6.2-2.7m12.4 5.1v-3.5a3 3 0 0 0-.9-2.4c2.9-.3 6-1.4 6-6.4a5 5 0 0 0-1.4-3.5 4.6 4.6 0 0 0-.1-3.5s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 2.6 4.9 3 4.9 3a4.6 4.6 0 0 0-.1 3.5A5 5 0 0 0 3.4 10c0 5 3.1 6.1 6 6.4a3 3 0 0 0-.9 2.4v3.5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7.6 10.4V17M7.6 7.4v.01M11.6 17v-3.7a2 2 0 0 1 4 0V17"/></symbol>
+    <symbol id="i-brilho" viewBox="0 0 24 24"><path d="m12 2.8 1.9 5.4 5.4 1.9-5.4 1.9L12 17.4l-1.9-5.4-5.4-1.9 5.4-1.9Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ==========================================================================
+     LOADER
+     ========================================================================== -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <div class="loader__caixa" aria-hidden="true">
+    <span class="loader__barra"></span>
+    <span class="loader__barra"></span>
+    <span class="loader__barra"></span>
+  </div>
+  <p class="loader__texto">Carregando experiência<span class="loader__pontos"></span></p>
+</div>
+
+<!-- ==========================================================================
+     CABEÇALHO / MENU
+     ========================================================================== -->
+<header class="cabecalho" id="cabecalho">
+  <div class="cabecalho__interno container">
+
+    <a class="marca" href="#inicio" aria-label="ScrockSys — início">
+      <span class="marca__logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+          <rect x="1.2" y="1.2" width="37.6" height="37.6" rx="11" fill="url(#lgGrad)"/>
+          <defs>
+            <linearGradient id="lgGrad" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0" stop-color="#1d5cff"/><stop offset="1" stop-color="#00c2b2"/>
+            </linearGradient>
+          </defs>
+          <path d="M14 16.5h7M14 20h12M14 23.5h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="marca__texto">
+        <strong class="marca__nome" data-config="marca">SCROCKSYS</strong>
+        <small class="marca__assinatura" data-config="assinatura">Sites • Sistemas • Design</small>
+      </span>
+    </a>
+
+    <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+      <ul class="navegacao__lista" id="listaNavegacao">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#incluso">O que está incluído</a></li>
+        <li><a href="#sistemas">Sistemas</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#antes-depois">Antes e Depois</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#investimento">Investimento</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <a class="botao botao--primario botao--pequeno cabecalho__cta" href="#contato">
+        Solicitar orçamento
+      </a>
+
+      <button class="menu-hamburguer" id="menuHamburguer" type="button"
+              aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="painelMenu">
+        <span class="menu-hamburguer__barra" aria-hidden="true"></span>
+        <span class="menu-hamburguer__barra" aria-hidden="true"></span>
+        <span class="menu-hamburguer__barra" aria-hidden="true"></span>
+      </button>
+    </nav>
+
+  </div>
+  <div class="cabecalho__progresso" aria-hidden="true"><span id="barraProgresso"></span></div>
+</header>
+
+<!-- ==========================================================================
+     PAINEL DO MENU (CELULAR)
+     ========================================================================== -->
+<div class="painel-menu-fundo" id="painelMenuFundo" hidden></div>
+<div class="painel-menu" id="painelMenu" hidden aria-label="Menu de navegação">
+  <div class="painel-menu__topo">
+    <span class="painel-menu__marca" data-config="marca">SCROCKSYS</span>
+    <button class="painel-menu__fechar" id="menuFechar" type="button" aria-label="Fechar menu">
+      <svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Navegação completa">
+    <ul class="painel-menu__lista">
+      <li><a href="#inicio"><span>Início</span><em>01</em></a></li>
+      <li><a href="#servicos"><span>Serviços</span><em>02</em></a></li>
+      <li><a href="#incluso"><span>O que está incluído</span><em>03</em></a></li>
+      <li><a href="#sistemas"><span>Sistemas Web</span><em>04</em></a></li>
+      <li><a href="#portfolio"><span>Portfólio</span><em>05</em></a></li>
+      <li><a href="#antes-depois"><span>Antes e Depois</span><em>06</em></a></li>
+      <li><a href="#design"><span>Design</span><em>07</em></a></li>
+      <li><a href="#diferenciais"><span>Diferenciais</span><em>08</em></a></li>
+      <li><a href="#processo"><span>Processo</span><em>09</em></a></li>
+      <li><a href="#investimento"><span>Investimento</span><em>10</em></a></li>
+      <li><a href="#contato"><span>Contato</span><em>11</em></a></li>
+    </ul>
+  </nav>
+
+  <div class="painel-menu__rodape">
+    <a class="botao botao--whatsapp botao--bloco" data-whatsapp="padrao" href="#">
+      <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+      Falar no WhatsApp
+    </a>
+    <p class="painel-menu__observacao" data-config="horarioResumo">Resposta em até 24 horas</p>
+  </div>
+</div>
+
+<main id="conteudo">
+
+<!-- ==========================================================================
+     1. HERO
+     ========================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero__fundo" aria-hidden="true">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__grid"></div>
+    <div class="hero__aurora hero__aurora--1"></div>
+    <div class="hero__aurora hero__aurora--2"></div>
+    <div class="hero__aurora hero__aurora--3"></div>
+    <div class="hero__vinheta"></div>
+  </div>
+
+  <div class="container hero__grade">
+
+    <div class="hero__conteudo">
+      <p class="chamada" data-config="heroChamada">Sites • Sistemas • Design • Soluções Digitais</p>
+
+      <h1 class="hero__titulo" id="heroTitulo">
+        <span class="hero__linha" data-linha-titulo="0"></span>
+        <span class="hero__linha" data-linha-titulo="1"></span>
+      </h1>
+
+      <p class="hero__texto" data-config="heroSubtitulo">
+        Criação de sites profissionais, sistemas web e soluções digitais personalizadas para empresas.
+      </p>
+
+      <div class="hero__acoes">
+        <a class="botao botao--primario botao--grande" data-whatsapp="padrao" href="#">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Solicitar orçamento
+        </a>
+        <a class="botao botao--contorno botao--grande" href="#portfolio">
+          Ver meus projetos
+          <svg class="icone" aria-hidden="true"><use href="#i-seta-direita"/></svg>
+        </a>
+      </div>
+
+      <ul class="hero__selos" aria-label="Áreas de atuação">
+        <li><span class="ponto-luz" aria-hidden="true"></span> Resposta rápida</li>
+        <li><span class="ponto-luz" aria-hidden="true"></span> Código próprio</li>
+        <li><span class="ponto-luz" aria-hidden="true"></span> Mobile first</li>
+      </ul>
+    </div>
+
+    <!-- Composição visual: notebook + celular + janelas flutuantes -->
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__cena" id="heroCena">
+
+        <!-- Notebook com site -->
+        <div class="mockup-notebook" data-flutua="1">
+          <div class="mockup-notebook__tela">
+            <div class="janela-navegador">
+              <span class="janela-navegador__pontos"><i></i><i></i><i></i></span>
+              <span class="janela-navegador__url">www.suaempresa.com.br</span>
+            </div>
+            <div class="site-demo">
+              <div class="site-demo__topo">
+                <span class="site-demo__logo"></span>
+                <span class="site-demo__menu"><i></i><i></i><i></i></span>
+              </div>
+              <div class="site-demo__hero">
+                <span class="site-demo__titulo"></span>
+                <span class="site-demo__linha"></span>
+                <span class="site-demo__linha site-demo__linha--curta"></span>
+                <span class="site-demo__botao"></span>
+              </div>
+              <div class="site-demo__cards">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-notebook__base">
+            <span class="mockup-notebook__entalhe"></span>
+          </div>
+        </div>
+
+        <!-- Celular com versão responsiva -->
+        <div class="mockup-celular" data-flutua="2">
+          <div class="mockup-celular__notch" aria-hidden="true"></div>
+          <div class="mockup-celular__tela">
+            <div class="celular-demo">
+              <span class="celular-demo__logo"></span>
+              <span class="celular-demo__titulo"></span>
+              <span class="celular-demo__linha"></span>
+              <span class="celular-demo__linha celular-demo__linha--curta"></span>
+              <span class="celular-demo__botao"></span>
+              <span class="celular-demo__card"></span>
+              <span class="celular-demo__card"></span>
+              <span class="celular-demo__card"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Janela de código -->
+        <div class="flutuante flutuante--codigo" data-flutua="3">
+          <div class="flutuante__topo">
+            <span class="flutuante__pontos"><i></i><i></i><i></i></span>
+            <span class="flutuante__nome">index.html</span>
+          </div>
+          <div class="flutuante__corpo codigo-demo">
+            <p><span class="tok tok--tag">&lt;section</span> <span class="tok tok--at">class</span>=<span class="tok tok--str">"hero"</span><span class="tok tok--tag">&gt;</span></p>
+            <p><span class="tok tok--tag">&lt;h1</span><span class="tok tok--tag">&gt;</span><span class="tok tok--txt">Sua empresa</span><span class="tok tok--tag">&lt;/h1&gt;</span></p>
+            <p><span class="tok tok--tag">&lt;a</span> <span class="tok tok--at">href</span>=<span class="tok tok--str">"#contato"</span><span class="tok tok--tag">&gt;</span><span class="tok tok--txt">Orçamento</span><span class="tok tok--tag">&lt;/a&gt;</span></p>
+            <p><span class="tok tok--tag">&lt;/section&gt;</span></p>
+          </div>
+        </div>
+
+        <!-- Card de dashboard -->
+        <div class="flutuante flutuante--dashboard" data-flutua="4">
+          <div class="flutuante__topo">
+            <span class="flutuante__nome">Painel de controle</span>
+            <span class="flutuante__icone" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-dashboard"/></svg></span>
+          </div>
+          <div class="flutuante__corpo">
+            <div class="dash-demo">
+              <div class="dash-demo__numeros">
+                <span><b>128</b><i>Registros</i></span>
+                <span><b>94%</b><i>Conclusão</i></span>
+              </div>
+              <div class="dash-demo__grafico">
+                <i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:48%"></i>
+                <i style="--h:82%"></i><i style="--h:56%"></i><i style="--h:70%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selo de SEO / Google -->
+        <div class="flutuante flutuante--seo" data-flutua="5">
+          <svg class="icone" aria-hidden="true"><use href="#i-busca"/></svg>
+          <div>
+            <strong>Estrutura para busca</strong>
+            <small>Boas práticas de SEO</small>
+          </div>
+        </div>
+
+        <!-- Selo de avaliação -->
+        <div class="flutuante flutuante--avaliacao" data-flutua="6">
+          <span class="estrelas" aria-hidden="true">★★★★★</span>
+          <div>
+            <strong>Avaliações</strong>
+            <small>Botão direto para o Google</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <a class="hero__rolar" href="#sobre" aria-label="Rolar para a próxima seção">
+    <span aria-hidden="true"></span>
+  </a>
+</section>
+
+<!-- ==========================================================================
+     2. FAIXA DE SERVIÇOS
+     ========================================================================== -->
+<section class="faixa" aria-label="Áreas de atuação">
+  <div class="faixa__faixa">
+    <div class="faixa__conteudo" id="faixaConteudo">
+      <span>Desenvolvimento de Sites</span><i aria-hidden="true"></i>
+      <span>Landing Pages</span><i aria-hidden="true"></i>
+      <span>Sistemas Web</span><i aria-hidden="true"></i>
+      <span>Design Gráfico</span><i aria-hidden="true"></i>
+      <span>Identidade Visual</span><i aria-hidden="true"></i>
+      <span>Interfaces</span><i aria-hidden="true"></i>
+      <span>Manutenção</span><i aria-hidden="true"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     3. SOBRE
+     ========================================================================== -->
+<section class="secao secao--sobre" id="sobre">
+  <div class="container">
+
+    <div class="grade_sobre">
+
+      <div class="sobre__conteudo" data-reveal>
+        <p class="etiqueta"><span aria-hidden="true"></span> Sobre a ScrockSys</p>
+        <h2 class="secao__titulo" id="sobreTitulo"></h2>
+        <div class="sobre__textos" id="sobreTextos"></div>
+
+        <ul class="garantias" id="listaGarantias"></ul>
+      </div>
+
+      <div class="sobre__visual" data-reveal="atras">
+        <div class="painel-sistema">
+          <div class="painel-sistema__topo">
+            <span class="painel-sistema__pontos"><i></i><i></i><i></i></span>
+            <span class="painel-sistema__titulo">scrocksys — ambiente de trabalho</span>
+          </div>
+          <div class="painel-sistema__corpo">
+            <aside class="painel-sistema__lateral">
+              <span class="painel-sistema__item is-ativo"></span>
+              <span class="painel-sistema__item"></span>
+              <span class="painel-sistema__item"></span>
+              <span class="painel-sistema__item"></span>
+              <span class="painel-sistema__item"></span>
+            </aside>
+            <div class="painel-sistema__principal">
+              <div class="painel-sistema__grade">
+                <span class="mini-card mini-card--azul">
+                  <i></i><b></b><em></em>
+                </span>
+                <span class="mini-card">
+                  <i></i><b></b><em></em>
+                </span>
+                <span class="mini-card">
+                  <i></i><b></b><em></em>
+                </span>
+                <span class="mini-card mini-card--largo">
+                  <i></i><b></b><em></em>
+                </span>
+              </div>
+              <div class="painel-sistema__linha-codigo">
+                <i style="--w:70%"></i><i style="--w:45%"></i><i style="--w:58%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre__estatisticas" id="listaEstatisticas"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     4. SERVIÇOS / SOLUÇÕES DIGITAIS
+     ========================================================================== -->
+<section class="secao secao--servicos" id="servicos">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> O que eu faço</p>
+      <h2 class="secao__titulo" data-config="frases.servicos.titulo">SOLUÇÕES DIGITAIS PARA SUA EMPRESA</h2>
+      <p class="secao__subtitulo" data-config="frases.servicos.subtitulo"></p>
+    </header>
+
+    <div class="lista-servicos" id="listaServicos"></div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     5. O QUE ESTÁ INCLUÍDO
+     ========================================================================== -->
+<section class="secao secao--incluso" id="incluso">
+  <div class="fundo-ponteado" aria-hidden="true"></div>
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Sem surpresa na entrega</p>
+      <h2 class="secao__titulo" data-config="frases.incluso.titulo">O QUE ESTÁ INCLUÍDO</h2>
+      <p class="secao__subtitulo" data-config="frases.incluso.subtitulo"></p>
+    </header>
+
+    <div class="grade-incluido" id="listaIncluido"></div>
+
+    <p class="selo-centralizado" data-reveal>
+      <svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>
+      <span data-config="selo.incluso">Tudo isso já está incluído no desenvolvimento</span>
+    </p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     6. SISTEMAS WEB
+     ========================================================================== -->
+<section class="secao secao--sistemas" id="sistemas">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Além de sites</p>
+      <h2 class="secao__titulo" data-config="frases.sistemas.titulo">SISTEMAS WEB PERSONALIZADOS</h2>
+      <p class="secao__subtitulo" data-config="frases.sistemas.subtitulo"></p>
+    </header>
+
+    <div class="sistemas-grade">
+
+      <!-- Coluna de cards -->
+      <div class="sistemas__cards" id="listaSistemas"></div>
+
+      <!-- Coluna de mockups -->
+      <div class="sistemas__visual" data-reveal="atras">
+        <div class="mockup-sistema" data-flutua="1">
+          <div class="mockup-sistema__topo">
+            <span class="painel-sistema__pontos"><i></i><i></i><i></i></span>
+            <span>gestao.sistema.com</span>
+          </div>
+          <div class="mockup-sistema__corpo">
+            <div class="mockup-sistema__barra">
+              <span class="is-ativo"></span><span></span><span></span><span></span>
+            </div>
+            <div class="mockup-sistema__principal">
+              <div class="kpi-linha">
+                <span><b>248</b><i>Cadastros</i></span>
+                <span><b>37</b><i>Pendentes</i></span>
+                <span><b>92%</b><i>Concluído</i></span>
+              </div>
+              <div class="tabela-demo">
+                <div class="tabela-demo__linha is-cabecalho"><i></i><i></i><i></i></div>
+                <div class="tabela-demo__linha"><i></i><i></i><i></i></div>
+                <div class="tabela-demo__linha"><i></i><i></i><i></i></div>
+                <div class="tabela-demo__linha"><i></i><i></i><i></i></div>
+                <div class="tabela-demo__linha"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-sistema mockup-sistema--flutuante" data-flutua="2">
+          <div class="mini-grafico">
+            <span class="estrelas estrelas--pequena" aria-hidden="true">★★★★★</span>
+            <div class="mini-grafico__barras">
+              <i style="--h:44%"></i><i style="--h:70%"></i><i style="--h:56%"></i>
+              <i style="--h:88%"></i><i style="--h:64%"></i><i style="--h:78%"></i>
+            </div>
+            <small>Relatório mensal</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Galeria de sistemas -->
+    <div class="bento-sistemas" id="listaPortfolioSistemas"></div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     7. PORTFÓLIO DE SITES (BENTO GRID + FILTROS)
+     ========================================================================== -->
+<section class="secao secao--portfolio" id="portfolio">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Portfólio</p>
+      <h2 class="secao__titulo" data-config="frases.portfolioSites.titulo">SITES DESENVOLVIDOS</h2>
+      <p class="secao__subtitulo" data-config="frases.portfolioSites.subtitulo"></p>
+    </header>
+
+    <div class="filtros" id="filtrosSites" role="group" aria-label="Filtrar projetos por categoria"></div>
+
+    <div class="bento" id="bentoSites"></div>
+
+    <p class="sem-resultado" id="semResultadoSites" hidden>Nenhum projeto nesta categoria por enquanto.</p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     8. ANTES E DEPOIS
+     ========================================================================== -->
+<section class="secao secao--antes-depois" id="antes-depois">
+  <div class="fundo-ponteado" aria-hidden="true"></div>
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Comparação visual</p>
+      <h2 class="secao__titulo" data-config="frases.antesDepois.titulo">ANTES E DEPOIS</h2>
+      <p class="secao__subtitulo" data-config="frases.antesDepois.subtitulo"></p>
+    </header>
+
+    <div class="grade-antes-depois" id="listaAntesDepois"></div>
+
+    <p class="dica-uso" data-reveal>
+      <svg class="icone" aria-hidden="true"><use href="#i-arraste"/></svg>
+      Arraste a alça, clique na imagem ou use as setas do teclado para comparar.
+    </p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     9. DESIGN GRÁFICO
+     ========================================================================== -->
+<section class="secao secao--design" id="design">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Design</p>
+      <h2 class="secao__titulo" data-config="frases.portfolioDesign.titulo">DESIGN GRÁFICO</h2>
+      <p class="secao__subtitulo" data-config="frases.portfolioDesign.subtitulo"></p>
+    </header>
+
+    <div class="filtros" id="filtrosDesign" role="group" aria-label="Filtrar peças de design por categoria"></div>
+
+    <div class="galeria-design" id="galeriaDesign"></div>
+
+    <p class="sem-resultado" id="semResultadoDesign" hidden>Nenhuma peça nesta categoria por enquanto.</p>
+
+    <div class="design-servicos" id="listaDesignServicos"></div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     10. SUA EMPRESA JÁ ESTÁ NA INTERNET?
+     ========================================================================== -->
+<section class="secao secao--presenca" id="por-que">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> A diferença</p>
+      <h2 class="secao__titulo" data-config="presenca.titulo">SUA EMPRESA JÁ ESTÁ NA INTERNET?</h2>
+      <p class="secao__subtitulo" data-config="presenca.subtitulo"></p>
+    </header>
+
+    <div class="comparativo" id="comparativoPresenca"></div>
+
+    <p class="nota-legal" id="notaPresenca" data-reveal></p>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     11. MAIS DO QUE UM SITE (DIFERENCIAIS)
+     ========================================================================== -->
+<section class="secao secao--diferenciais" id="diferenciais">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Diferenciais</p>
+      <h2 class="secao__titulo">MAIS DO QUE UM SITE</h2>
+      <p class="secao__subtitulo">
+        O que você recebe além do código: um processo claro, um visual coerente
+        e um projeto pensado para ser usado de verdade pela sua empresa.
+      </p>
+    </header>
+
+    <div class="grade-diferenciais" id="listaDiferenciais"></div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     12. PROCESSO
+     ========================================================================== -->
+<section class="secao secao--processo" id="processo">
+  <div class="fundo-ponteado" aria-hidden="true"></div>
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Processo de trabalho</p>
+      <h2 class="secao__titulo">COMO FUNCIONA O DESENVOLVIMENTO?</h2>
+      <p class="secao__subtitulo">
+        Seis etapas claras, do primeiro contato até o site publicado.
+        Você acompanha cada passo e sabe exatamente o que está acontecendo.
+      </p>
+    </header>
+
+    <ol class="linha-do-tempo" id="linhaDoTempo"></ol>
+
+    <div class="processo__rodape" data-reveal>
+      <p class="selo-centralizado">
+        <svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>
+        <span data-config="selo.processo">Do conceito ao projeto publicado</span>
+      </p>
+      <a class="botao botao--primario" data-whatsapp="padrao" href="#">
+        <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        Começar conversa
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     13. INVESTIMENTO
+     ========================================================================== -->
+<section class="secao secao--investimento" id="investimento">
+  <div class="container">
+
+    <header class="secao__cabecalho" data-reveal>
+      <p class="etiqueta"><span aria-hidden="true"></span> Transparência</p>
+      <h2 class="secao__titulo" id="investimentoTitulo">QUANTO CUSTA CRIAR UM SITE?</h2>
+      <p class="secao__subtitulo" data-config="investimento.subtitulo"></p>
+    </header>
+
+    <div class="investimento-grade">
+
+      <!-- Cartão principal: desenvolvimento -->
+      <article class="cartao-preco cartao-preco--destaque" data-reveal>
+        <p class="cartao-preco__rotulo" id="precoRotulo">Desenvolvimento</p>
+        <p class="cartao-preco__valor" id="precoValor">A partir de R$ 350,00</p>
+        <p class="cartao-preco__descricao" id="precoDescricao"></p>
+
+        <ul class="cartao-preco__lista" id="precoItens"></ul>
+
+        <p class="cartao-preco__aviso" id="precoAviso"></p>
+
+        <a class="botao botao--primario botao--bloco" data-whatsapp="padrao" href="#">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Solicitar orçamento
+        </a>
+      </article>
+
+      <div class="investimento__lateral">
+
+        <!-- Pagamento facilitado -->
+        <article class="cartao-info cartao-info--destaque" data-reveal="atras">
+          <span class="cartao-info__marca" aria-hidden="true"></span>
+          <p class="cartao-info__rotulo" id="pagamentoRotulo">Pagamento facilitado</p>
+          <h3 class="cartao-info__titulo" id="pagamentoTitulo">Parcelamento em até 3x</h3>
+          <p class="cartao-info__texto" id="pagamentoTexto"></p>
+        </article>
+
+        <!-- Domínio -->
+        <article class="cartao-info" data-reveal>
+          <span class="cartao-info__icone" aria-hidden="true"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-dominio"/></svg></span>
+          <p class="cartao-info__rotulo" id="dominioRotulo">Custo separado</p>
+          <h3 class="cartao-info__titulo" id="dominioTitulo">Domínio .com.br</h3>
+          <p class="cartao-info__preco" id="dominioPreco">Aproximadamente R$ 40,00 por ano</p>
+          <p class="cartao-info__texto" id="dominioTexto"></p>
+          <p class="cartao-info__exemplo">
+            <svg class="icone" aria-hidden="true"><use href="#i-local"/></svg>
+            <span id="dominioExemplo">www.suaempresa.com.br</span>
+          </p>
+        </article>
+
+        <!-- Hospedagem -->
+        <article class="cartao-info" data-reveal>
+          <span class="cartao-info__icone" aria-hidden="true"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-hospedagem"/></svg></span>
+          <p class="cartao-info__rotulo" id="hospedagemRotulo">Sem mensalidade</p>
+          <h3 class="cartao-info__titulo" id="hospedagemTitulo">Hospedagem</h3>
+          <p class="cartao-info__preco" id="hospedagemPreco">R$ 0,00 em projetos estáticos compatíveis</p>
+          <div class="cartao-info__textos" id="hospedagemTextos"></div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Faixas de escopo -->
+    <div class="faixas" id="listaFaixas"></div>
+
+    <!-- Observações -->
+    <ul class="observacoes" id="listaObservacoes"></ul>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     14. CONTATO
+     ========================================================================== -->
+<section class="secao secao--contato" id="contato">
+  <div class="fundo-ponteado" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="contato-grade">
+
+      <div class="contato__conteudo" data-reveal>
+        <p class="etiqueta etiqueta--clara"><span aria-hidden="true"></span> Vamos conversar</p>
+        <h2 class="secao__titulo secao__titulo--claro">VAMOS CRIAR SEU PROJETO?</h2>
+        <p class="contato__texto">
+          Se sua empresa precisa de um site, sistema ou material visual profissional,
+          entre em contato para conversarmos sobre o projeto.
+        </p>
+
+        <ul class="contato__itens" id="listaContato"></ul>
+
+        <div class="contato__redes" id="listaRedes"></div>
+      </div>
+
+      <!-- Formulário: monta a mensagem do WhatsApp, sem backend -->
+      <div class="contato__formulario" data-reveal="atras">
+        <form class="formulario" id="formularioContato" novalidate>
+          <p class="formulario__titulo">Solicitar orçamento</p>
+          <p class="formulario__ajuda">Preencha os campos e o WhatsApp abre com a mensagem pronta.</p>
+
+          <div class="campo">
+            <label for="campoNome">Nome <span aria-hidden="true">*</span></label>
+            <input type="text" id="campoNome" name="nome" autocomplete="name"
+                   placeholder="Seu nome" required>
+            <small class="campo__erro" data-erro="nome"></small>
+          </div>
+
+          <div class="campo">
+            <label for="campoEmpresa">Empresa <span aria-hidden="true">*</span></label>
+            <input type="text" id="campoEmpresa" name="empresa" autocomplete="organization"
+                   placeholder="Nome da empresa" required>
+            <small class="campo__erro" data-erro="empresa"></small>
+          </div>
+
+          <div class="campo">
+            <label for="campoWhatsapp">WhatsApp <span aria-hidden="true">*</span></label>
+            <input type="tel" id="campoWhatsapp" name="whatsapp" autocomplete="tel"
+                   inputmode="numeric" placeholder="(00) 00000-0000" required>
+            <small class="campo__erro" data-erro="whatsapp"></small>
+          </div>
+
+          <div class="campo">
+            <label for="campoServico">Serviço desejado</label>
+            <select id="campoServico" name="servico"></select>
+          </div>
+
+          <div class="campo">
+            <label for="campoMensagem">Mensagem</label>
+            <textarea id="campoMensagem" name="mensagem" rows="4"
+                      placeholder="Conte rapidamente o que você precisa (opcional)"></textarea>
+          </div>
+
+          <button class="botao botao--whatsapp botao--bloco botao--grande" type="submit">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Solicitar orçamento pelo WhatsApp
+          </button>
+
+          <p class="formulario__nota">
+            <svg class="icone" aria-hidden="true"><use href="#i-controle"/></svg>
+            Nenhum dado é enviado para servidor. A mensagem é montada no seu navegador
+            e aberta direto no WhatsApp.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     RODAPÉ
+     ========================================================================== -->
+<footer class="rodape">
+  <div class="container">
+
+    <div class="rodape__grade">
+
+      <div class="rodape__marca">
+        <a class="marca marca--rodape" href="#inicio" aria-label="ScrockSys — início">
+          <span class="marca__logo" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+              <rect x="1.2" y="1.2" width="37.6" height="37.6" rx="11" fill="url(#lgGradRodape)"/>
+              <defs>
+                <linearGradient id="lgGradRodape" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0" stop-color="#1d5cff"/><stop offset="1" stop-color="#00c2b2"/>
+                </linearGradient>
+              </defs>
+              <path d="M14 16.5h7M14 20h12M14 23.5h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="marca__texto">
+            <strong class="marca__nome" data-config="marca">SCROCKSYS</strong>
+            <small class="marca__assinatura" data-config="assinatura">Sites • Sistemas • Design</small>
+          </span>
+        </a>
+
+        <p class="rodape__descricao" data-config="descricao"></p>
+
+        <div class="rodape__redes" id="redesRodape"></div>
+      </div>
+
+      <nav class="rodape__coluna" aria-labelledby="rodapeServicos">
+        <h3 id="rodapeServicos">Serviços</h3>
+        <ul id="listaRodapeServicos"></ul>
+      </nav>
+
+      <nav class="rodape__coluna" aria-labelledby="rodapeNavegar">
+        <h3 id="rodapeNavegar">Navegar</h3>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#incluso">O que está incluído</a></li>
+          <li><a href="#sistemas">Sistemas Web</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#antes-depois">Antes e Depois</a></li>
+          <li><a href="#design">Design Gráfico</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#investimento">Investimento</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__coluna" aria-labelledby="rodapeContato">
+        <h3 id="rodapeContato">Contato</h3>
+        <ul class="rodape__contato" id="listaRodapeContato"></ul>
+      </div>
+
+    </div>
+
+    <div class="rodape__fundo">
+      <p class="rodape__copyright" id="rodapeCopyright"></p>
+      <p class="rodape__assinatura" data-config="slogan"></p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     CTA FLUTUANTE DE WHATSAPP
+     ========================================================================== -->
+<a class="cta-flutuante" id="ctaFlutuante" data-whatsapp="padrao" href="#" data-icone="whatsapp">
+  <span class="cta-flutuante__icone" aria-hidden="true">
+    <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+  </span>
+  <span class="cta-flutuante__texto" id="ctaFlutuanteTexto">Falar sobre meu projeto</span>
+</a>
+
+<!-- ==========================================================================
+     LIGHTBOX (galeria de design + detalhes de projeto)
+     ========================================================================== -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lightboxTitulo">
+  <div class="lightbox__fundo" data-fechar-lightbox></div>
+  <div class="lightbox__caixa" role="document">
+    <button class="lightbox__fechar" type="button" data-fechar-lightbox aria-label="Fechar">
+      <svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg>
+    </button>
+
+    <button class="lightbox__nav lightbox__nav--anterior" type="button" id="lightboxAnterior" aria-label="Peça anterior">
+      <svg class="icone" aria-hidden="true"><use href="#i-seta-direita"/></svg>
+    </button>
+
+    <figure class="lightbox__conteudo">
+      <div class="lightbox__moldura">
+        <img id="lightboxImagem" src="" alt="">
+      </div>
+      <figcaption class="lightbox__legenda">
+        <p class="lightbox__categoria" id="lightboxCategoria"></p>
+        <h3 class="lightbox__titulo" id="lightboxTitulo"></h3>
+        <p class="lightbox__texto" id="lightboxTexto"></p>
+        <div class="lightbox__tags" id="lightboxTags"></div>
+        <a class="botao botao--primario" id="lightboxLink" href="#">
+          Ver projeto
+          <svg class="icone" aria-hidden="true"><use href="#i-externo"/></svg>
+        </a>
+      </figcaption>
+    </figure>
+
+    <button class="lightbox__nav lightbox__nav--proximo" type="button" id="lightboxProximo" aria-label="Próxima peça">
+      <svg class="icone" aria-hidden="true"><use href="#i-seta-direita"/></svg>
+    </button>
+
+    <p class="lightbox__contador" id="lightboxContador"></p>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     TOAST (mensagens de confirmação)
+     ========================================================================== -->
+<div class="toasts" id="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ==========================================================================
+     SCRIPTS
+     Carregados em ordem. Sem dependência de backend ou framework.
+
+     O config.js vem primeiro porque é ele que guarda todos os textos,
+     preços, contatos e projetos do site.
+     ========================================================================== -->
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/classifier.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
