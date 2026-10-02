@@ -254,7 +254,39 @@ window.UI = (function () {
   }
 
   /* ==================================================================
-     5. CTA FLUTUANTE
+     5. MARQUEE DA FAIXA DE SERVIÇOS
+     ------------------------------------------------------------------
+     A animação translada a faixa até -50%. Para o loop ser invisível,
+     o conteúdo precisa estar duplicado: quando a primeira metade sai
+     pela esquerda, a segunda ocupa exatamente o mesmo lugar.
+
+     Sem a duplicação a barra ficava com metade vazia — era o
+     "faltando letras" que aparecia quando a rolagem chegava ao fim.
+     ================================================================== */
+
+  function iniciarFaixaServicos() {
+    var conteudo = U.$("#faixaConteudo");
+    if (!conteudo) return;
+    if (conteudo.dataset.duplicado === "sim") return;
+
+    // Rótulo para leitores de tela
+    conteudo.setAttribute("role", "marquee");
+    conteudo.setAttribute("aria-label", "Áreas de atuação");
+
+    // A cópia fica fora da árvore acessível (aria-hidden) para o leitor
+    // de tela não announcementar as mesmas palavras duas vezes.
+    var copia = U.criarEl("div", {
+      class: "faixa__conteudo faixa__conteudo--copia",
+      "aria-hidden": "true"
+    });
+    copia.innerHTML = conteudo.innerHTML;
+
+    conteudo.parentNode.appendChild(copia);
+    conteudo.dataset.duplicado = "sim";
+  }
+
+  /* ==================================================================
+     6. CTA FLUTUANTE
      ================================================================== */
 
   function iniciarCtaFlutuante() {
@@ -669,6 +701,7 @@ window.UI = (function () {
     iniciarLoader();
     iniciarCabecalho();
     iniciarMenu();
+    iniciarFaixaServicos();
     iniciarReveal();
     iniciarCtaFlutuante();
     iniciarComparadores();

@@ -290,14 +290,55 @@ window.Utils = (function () {
     };
   }
 
-  /** Limita a frequência de execução (útil em scroll e resize). */
+  /**
+   * Limita a frequência de execução, mas SEM perder a última chamada.
+   *
+   * Por que não pode ser o throttle comum (que simplesmente "pula" os
+   * eventos dentro do intervalo): em efeitos ligados à rolagem, o evento
+   * descartado é justamente o que traz a posição final. O Hero voltava
+   * do scroll com opacidade 0,87 em vez de 1 e nunca era corrigido,
+   * porque o evento que traria o valor certo tinha sido ignorado.
+   *
+   * Aqui a última chamada fica sempre agendada e é executada no
+   * próximo quadro, garantindo que o estado final seja aplicado.
+   */
   function throttle(fn, intervalo) {
+    var intervaloMs = intervalo || 100;
     var ultimo = 0;
+    var agendado = false;
+    var contexto = null;
+    var args = null;
+
     return function () {
       var agora = Date.now();
-      if (agora - ultimo < (intervalo || 100)) return;
-      ultimo = agora;
-      fn.apply(this, arguments);
+      contexto = this;
+      args = arguments;
+
+      if (agora - ultimo >= intervaloMs) {
+        // Cabe na janela: executa agora e cancela qualquer agendamento
+        if (agendado && typeof cancelAnimationFrame === "function") {
+          cancelAnimationFrame(agendado);
+        }
+        agendado = false;
+        ultimo = agora;
+        fn.apply(contexto, args);
+        return;
+      }
+
+      // Ainda dentro da janela: guarda para executar logo em seguida
+      if (agendado) return;
+
+      agendado = typeof requestAnimationFrame === "function"
+        ? requestAnimationFrame(function () {
+            agendado = false;
+            ultimo = Date.now();
+            fn.apply(contexto, args);
+          })
+        : setTimeout(function () {
+            agendado = false;
+            ultimo = Date.now();
+            fn.apply(contexto, args);
+          }, intervaloMs - (agora - ultimo));
     };
   }
 
