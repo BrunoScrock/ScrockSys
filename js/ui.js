@@ -85,7 +85,35 @@ window.UI = (function () {
     var progresso = U.$("#barraProgresso");
     if (!cabecalho) return;
 
-    var links = U.$$("#listaNavegacao a");
+    /* Destaca a seção em AMBOS os menus: a barra do desktop e também o
+       menu lateral do celular. Antes só a barra era atualizada, então no
+       celular nenhum item ficava marcado ao rolar a página. */
+    var linksCabecalho = U.$$("#listaNavegacao a");
+    var linksMenu = U.$$(".painel-menu__lista a");
+
+    /* Cada menu é calculado com os SEUS links: a barra do desktop não tem
+       "Diferenciais", mas o menu lateral tem. Se os dois usassem a mesma
+       lista, o celular marcaria "Design" ao rolar até Diferenciais.
+
+       Nome da função só com letras ASCII: identificador com acento é
+       frágil (encoding, minificação e ferramentas externas). */
+    function secaoAtiva(links, linha) {
+      var ativa = null;
+
+      links.forEach(function (link) {
+        var href = link.getAttribute("href");
+        if (!href || href === "#") return;
+
+        var alvo = document.querySelector(href);
+        if (!alvo) return;
+
+        if (alvo.getBoundingClientRect().top + window.pageYOffset <= linha) {
+          ativa = href;
+        }
+      });
+
+      return ativa;
+    }
 
     function atualizar() {
       var rolou = window.pageYOffset > 24;
@@ -98,25 +126,35 @@ window.UI = (function () {
         progresso.style.width = percentual + "%";
       }
 
-      // Destaca o link da seção visível
+      // A seção é considerada atual quando passa de 32% da altura da tela
       var linha = window.pageYOffset + (window.innerHeight * 0.32);
-      var ativo = null;
 
-      links.forEach(function (link) {
-        var alvo = document.querySelector(link.getAttribute("href"));
-        if (!alvo) return;
-        var topo = alvo.getBoundingClientRect().top + window.pageYOffset;
-        if (topo <= linha) ativo = link;
+      linksCabecalho.forEach(function (link) {
+        link.classList.toggle("is-ativo", link.getAttribute("href") === secaoAtiva(linksCabecalho, linha));
       });
 
-      links.forEach(function (link) {
-        link.classList.toggle("is-ativo", link === ativo);
+      linksMenu.forEach(function (link) {
+        link.classList.toggle("is-ativo", link.getAttribute("href") === secaoAtiva(linksMenu, linha));
       });
     }
 
     atualizar();
     window.addEventListener("scroll", U.throttle(atualizar, 90), { passive: true });
     window.addEventListener("resize", U.debounce(atualizar, 160));
+
+    /* Mantém o item ativo visível quando o menu lateral abre */
+    U.$("#painelMenu").addEventListener("transitionend", function () {
+      var item = U.$(".painel-menu__lista a.is-ativo", this);
+      if (!item) return;
+
+      var lista = U.$(".painel-menu__lista", this);
+      var topoItem = item.offsetTop;
+      var base = topoItem - lista.offsetTop;
+
+      if (base < lista.scrollTop || base + item.offsetHeight > lista.scrollTop + lista.clientHeight) {
+        item.scrollIntoView({ block: "center", behavior: "smooth" });
+      }
+    });
   }
 
   /* ==================================================================

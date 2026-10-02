@@ -789,6 +789,37 @@ ul, ol { list-style: none; }
   padding-left: 18px;
 }
 
+/* Seção que está visível na tela.
+   Aplicado pelo JS ao rolar a página, nos dois menus (barra do desktop
+   e menu lateral do celular). Sem esta regra o item ativo do celular
+   não tinha nenhum destaque visual. */
+.painel-menu__lista a.is-ativo {
+  position: relative;
+  background: var(--grad-principal-suave);
+  color: var(--azul);
+  font-weight: 700;
+  padding-left: 18px;
+}
+
+/* Barra azul na lateral do item ativo */
+.painel-menu__lista a.is-ativo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 60%;
+  transform: translateY(-50%);
+  border-radius: 0 3px 3px 0;
+  background: var(--grad-principal);
+}
+
+.painel-menu__lista a.is-ativo em {
+  color: var(--azul);
+  opacity: .75;
+  font-weight: 600;
+}
+
 .painel-menu__rodape {
   margin-top: auto;
   padding: 22px clamp(20px, 5vw, 30px) calc(22px + env(safe-area-inset-bottom));
