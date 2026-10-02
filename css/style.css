@@ -3881,10 +3881,19 @@ ul, ol { list-style: none; }
 @media (max-width: 767px) {
   :root { --altura-cabecalho: 66px; }
 
-  .cabecalho__interno,
+.cabecalho__interno,
   .cabecalho.is-rolado .cabecalho__interno { height: var(--altura-cabecalho); }
 
-  .marca__assinatura { display: none; }
+  /* O subtítulo "Sites • Sistemas • Design" também aparece no celular.
+     Only o tamanho é reduzido, para caber ao lado do botão do menu. */
+  .marca__assinatura {
+    display: block;
+    font-size: .6rem;
+    letter-spacing: .04em;
+  }
+
+  .marca__nome { font-size: .98rem; }
+  .marca__logo img { height: 34px; }
 
   .hero { padding-bottom: 48px; }
   .hero__rolar { display: none; }
@@ -3929,62 +3938,99 @@ ul, ol { list-style: none; }
 
   .dica-uso { align-items: flex-start; text-align: left; }
 
-  /* Janelas decorativas do Hero: em tela pequena só ficam as duas
-     que agregam informação (SEO e painel), para não poluir o celular. */
-  .flutuante--codigo,
-  .flutuante--avaliacao { display: none; }
-
-  .flutuante--seo { left: 2%; top: 2%; }
-  .flutuante--dashboard { right: 0; bottom: 20%; width: 48%; }
+/* Janelas decorativas do Hero: mantidas TODAS no celular
+     (busca, avaliações, código e painel), com o mesmo desenho em camadas
+     do desktop. As posições e os tamanhos são ajustados mais abaixo,
+     no bloco "HERO NO CELULAR". */
+  .flutuante--seo { left: 0; top: 1%; }
+  .flutuante--dashboard { right: 0; bottom: 14%; width: 48%; }
 }
 
 /* --------------------------------------------------------------------------
    HERO NO CELULAR — recomposição da cena
    --------------------------------------------------------------------------
-   No celular a cena quadrada ficava alta demais e os elementos se
-   atropelavam (o celular ficava atrás do painel e a base do notebook
-   saía da caixa). Aqui a cena é limitada a 320px e cada peça é
-   reposicionada e redimensionada para caber sem cortes.
+   Aqui as QUATRO janelas decorativas aparecem, como no desktop:
+   busca e avaliações no topo, código e painel na base.
+
+   O que muda em relação ao desktop é só escala e posição, para que as
+   quatro caibam sem cobrir o texto e sem sair da caixa:
+
+     desktop                    celular
+     -------------------------  ------------------------------------------
+     busca      11% esq, 3%    0% esq,    0% topo
+     avaliações  7% dir, 7%    0% dir,    7% topo
+     código    -3% esq, 12%    0% esq,   14% base
+     painel    -1% dir, 24%    0% dir,    2% base
+     notebook   84% esq, 12%   74% esq,   16% topo
+     celular    29% dir, 30%   23% dir,   34% topo
    -------------------------------------------------------------------------- */
 @media (max-width: 767px) {
   .hero__cena {
-    max-width: 320px;
+    max-width: 340px;
     aspect-ratio: 1 / 1;
   }
 
-  /* Notebook: um pouco menor e mais alto, para a base aparecer */
+  /* Peças principais */
   .mockup-notebook {
-    width: 78%;
-    top: 9%;
+    width: 74%;
+    top: 16%;
   }
 
-  /* Celular: menor e slightly mais baixo, sem ficar atrás do painel */
   .mockup-celular {
-    width: 25%;
-    top: 26%;
+    width: 23%;
+    top: 34%;
     right: 0;
   }
 
-  /* Painel: sobreposto à parte de baixo, sem cobrir o celular */
+  /* Janela de busca (topo esquerdo) */
+  .flutuante--seo {
+    left: 0;
+    top: 0;
+    padding: 7px 10px;
+    gap: 7px;
+  }
+
+  .flutuante--seo .icone { width: 15px; height: 15px; }
+
+  /* Janela de avaliações (topo direito) */
+  .flutuante--avaliacao {
+    right: 0;
+    top: 7%;
+    padding: 7px 10px;
+    gap: 7px;
+  }
+
+  /* Janela de código (base esquerda) */
+  .flutuante--codigo {
+    left: 0;
+    bottom: 14%;
+    width: 47%;
+  }
+
+  /* Painel de controle (base direita) */
   .flutuante--dashboard {
     right: 0;
-    bottom: 6%;
+    bottom: 2%;
     width: 50%;
   }
 
-  .flutuante--seo {
-    left: 0;
-    top: 1%;
-    padding: 8px 12px;
-  }
-
-  /* Textos menores para caber */
+  /* Textos menores: as janelas são miniaturas de interface */
+  .flutuante__nome { font-size: .5rem; }
   .flutuante--seo strong,
-  .flutuante--avaliacao strong { font-size: .66rem; }
+  .flutuante--avaliacao strong { font-size: .6rem; }
   .flutuante--seo small,
-  .flutuante--avaliacao small { font-size: .56rem; }
+  .flutuante--avaliacao small { font-size: .5rem; }
+  .codigo-demo { font-size: .48rem; line-height: 1.6; }
+  .estrelas { font-size: .62rem; }
 
-  /*menos espaço entre o texto e a cena */
+  .flutuante__topo { padding: 6px 8px; }
+  .flutuante__corpo { padding: 9px; }
+
+  .dash-demo__numeros b { font-size: .72rem; }
+  .dash-demo__numeros i { font-size: .45rem; }
+  .dash-demo__grafico { height: 30px; }
+
+  /* menos espaço entre o texto e a cena */
   .hero__grade { gap: clamp(22px, 5vw, 34px); }
   .hero__selos { margin-bottom: 4px; }
 }
@@ -4047,8 +4093,9 @@ ul, ol { list-style: none; }
 
 /* Very small (320px) */
 @media (max-width: 340px) {
-  .marca__nome { font-size: .95rem; }
-  .marca__logo img { height: 34px; }
+  .marca__nome { font-size: .9rem; }
+  .marca__assinatura { font-size: .54rem; }
+  .marca__logo img { height: 30px; }
   .hero__acoes .botao { padding: 14px 16px; font-size: .78rem; }
   .garantia { padding: 12px; }
   .incluido { padding: 16px; gap: 11px; }
