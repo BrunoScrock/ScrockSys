@@ -539,26 +539,31 @@
   /* ------------------------------------------------------------------------
      BENTO GRID — o layout é calculado para a grade nunca ficar com buraco.
 
+     As fotos de site são screenshots de desktop (~2,1:1, bem largas), então
+     os cards também são largos: um formato retrato cortaria a maior parte da
+     imagem. Cada formato foi escolhido pela proporção resultante:
+
+        destaque (12 x 3) -> 2,16  (recorta ~3% da altura)   quase intacto
+        metade  (6  x 2) -> 1,65  (recorta ~21% da largura)  aceitável
+        largo   (12 x 2) -> 3,30  (recorta ~36% da altura)   uso raro
+
      Ciclo que fecha 12 colunas exatas:
-       destaque (8) + grande (4)  = 12   (3 linhas de altura)
-       terço (4) + terço (4) + terço (4) = 12   (2 linhas de altura)
+       destaque (12)                 = 12   (3 linhas de altura)
+       metade (6) + metade (6)       = 12   (2 linhas de altura)
 
      Quando a quantidade de projetos não fecha o ciclo completo, a cauda
      é reorganizada. Veja a tabela abaixo (12 colunas = largura da grade):
 
        sobra 0  ->  nada a fazer, o ciclo já fechou
-       sobra 1  ->  1 card largo (12)
-       sobra 2  ->  já fecha: destaque (8) + grande (4)
-       sobra 3  ->  3 cards de terço (4 + 4 + 4)
-       sobra 4  ->  3 cards de terço (12) + 1 largo (12)
+       sobra 1  ->  1 card destaque (12)
+       sobra 2  ->  2 cards de metade (6 + 6)
      ---------------------------------------------------------------------- */
 
-  var CICLO_BENTO = ["destaque", "grande", "terco", "terco", "terco"];
+  var CICLO_BENTO = ["destaque", "metade", "metade"];
 
   var FECHAMENTO_BENTO = {
-    1: ["largo"],
-    3: ["terco", "terco", "terco"],
-    4: ["terco", "terco", "terco", "largo"]
+    1: ["destaque"],
+    2: ["metade", "metade"]
   };
 
   function calcularTamanhosBento(lista) {

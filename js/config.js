@@ -556,15 +556,21 @@ window.CONFIG = {
      14. PORTFÓLIO
      ==========================================================================
      Categorias usadas nos filtros:
-     "Institucional", "Serviços", "Comércio", "Profissionais",
-     "Landing Page", "Portfólio", "Sistema", "Design", "Identidade Visual"
-  ========================================================================== */
+       Sites      -> "Institucional", "Comércio", "Portfólio"
+       Sistemas   -> "Sistema"
+       Design     -> "Logo", "Identidade Visual", "Social Media",
+                     "Banners", "Material Comercial"
+
+     Os filtros devem conter só categorias que existem em "sites", senão
+     clicar em uma categoria vazia mostra "nenhum resultado".
+   ========================================================================== */
 
   portfolio: {
 
     /* Filtros da seção "Sites desenvolvidos".
-       "Todos" sempre aparece primeiro e não precisa ser removido. */
-    filtrosSites: ["Todos", "Institucional", "Serviços", "Comércio", "Profissionais", "Landing Page"],
+       "Todos" sempre aparece primeiro e não precisa ser removido.
+       Mantenha sincronizado com a propriedade "categoria" dos itens abaixo. */
+    filtrosSites: ["Todos", "Institucional", "Comércio", "Portfólio"],
 
     /* Filtros da seção "Design gráfico" */
     filtrosDesign: ["Todos", "Logo", "Identidade Visual", "Social Media", "Banners", "Material Comercial"],
@@ -573,51 +579,27 @@ window.CONFIG = {
       {
         titulo: "INOVE Mecânica",
         categoria: "Institucional",
-        imagem: "assets/images/portfolio/sites/inove-mecanica.svg",
-        descricao: "Site institucional para oficina mecânica com apresentação dos serviços, estrutura da equipe e contato por WhatsApp.",
+        imagem: "assets/images/portfolio/sites/inove-mecanica.webp",
+        descricao: "Site institucional para oficina mecânica, com hero em tela cheia, serviços de diagnóstico e manutenção, atendimento profissional e contato por WhatsApp.",
         url: "#",
-        tags: ["Institucional", "WhatsApp", "Responsivo"],
+        tags: ["Institucional", "WhatsApp", "Hero com foto"],
         destaque: true
       },
       {
         titulo: "Quirino Barbearia",
         categoria: "Comércio",
-        imagem: "assets/images/portfolio/sites/quirino-barbearia.svg",
-        descricao: "Página de serviços com lista de cortes, preços, horários, localização e galeria de trabalhos.",
+        imagem: "assets/images/portfolio/sites/quirino-barbearia.webp",
+        descricao: "Página de serviços para barbearia com horários, estilo e precisão, atendimento personalizado e galeria de trabalhos.",
         url: "#",
-        tags: ["Comércio", "Galeria", "Localização"]
+        tags: ["Comércio", "Galeria", "Botão de avaliação"]
       },
       {
-        titulo: "FF Pisos",
+        titulo: "Arte Final Pisos de Madeira",
         categoria: "Portfólio",
-        imagem: "assets/images/portfolio/sites/ff-pisos.svg",
-        descricao: "Site com portfólio de ambientes instalados, seleção de materiais e contato direto com a equipe.",
+        imagem: "assets/images/portfolio/sites/arte-final-pisos.webp",
+        descricao: "Site com portfólio de ambientes instalados, seleção de materiais, atendimento com hora marcada e contato direto com a equipe.",
         url: "#",
-        tags: ["Portfólio", "Galeria", "SEO básico"]
-      },
-      {
-        titulo: "Big Tattoo",
-        categoria: "Serviços",
-        imagem: "assets/images/portfolio/sites/big-tattoo.svg",
-        descricao: "Site de serviços com galeria de tatuagens, informações sobre o procedimento e agendamento pelo WhatsApp.",
-        url: "#",
-        tags: ["Serviços", "Galeria", "Responsivo"]
-      },
-      {
-        titulo: "GL Estofaria",
-        categoria: "Serviços",
-        imagem: "assets/images/portfolio/sites/gl-estofaria.svg",
-        descricao: "Página de apresentação dos serviços de estofaria, antes e depois e atendimento por WhatsApp.",
-        url: "#",
-        tags: ["Serviços", "Responsivo", "WhatsApp"]
-      },
-      {
-        titulo: "Hidratex",
-        categoria: "Institucional",
-        imagem: "assets/images/portfolio/sites/hidratex.svg",
-        descricao: "Site institucional com soluções para o segmento, benefícios e contato direto com a equipe.",
-        url: "#",
-        tags: ["Institucional", "SEO básico", "WhatsApp"]
+        tags: ["Portfólio", "Galeria", "Hora marcada"]
       }
     ],
 

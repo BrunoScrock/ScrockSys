@@ -2203,10 +2203,11 @@ ul, ol { list-style: none; }
 }
 
 /* Tamanhos do Bento.
-   O ciclo [destaque(8) + grande(4) + terco×3(4+4+4)] fecha exatamente
-   12 colunas, então a grade nunca sobra buraco.
-   "largo" (12 colunas) e "metade" (6+6) são usados só no fechamento. */
-.bento__item--destaque { grid-column: span 8; grid-row: span 3; }
+   Os screenshots de site são largos (~2,1:1), então os cards evitam formato
+   retrato, que cortaria mais da metade da imagem.
+   O ciclo [destaque(12) + metade(6) + metade(6)] fecha exatamente 12 colunas,
+   então a grade nunca sobra buraco. "largo" (12 colunas) é usado no fechamento. */
+.bento__item--destaque { grid-column: span 12; grid-row: span 3; }
 .bento__item--grande { grid-column: span 4; grid-row: span 3; }
 .bento__item--terco { grid-column: span 4; grid-row: span 2; }
 .bento__item--metade { grid-column: span 6; grid-row: span 2; }
