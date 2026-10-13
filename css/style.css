@@ -2123,19 +2123,26 @@ ul, ol { list-style: none; }
 
 .mini-grafico small { font-size: .6rem; color: var(--tinta-fraca); }
 
-/* Galeria de sistemas (3 telas de painel administrativo)
+/* Galeria de sistemas (telas de painel administrativo)
 
    ATENÇÃO: os cards reaproveitam `.bento__item`, cujo conteúdo interno é
    `position: absolute`. Na grade do portfólio isso funciona porque existem
    `grid-auto-rows` fixas; aqui não existiam, então a linha ficava com
    altura 0 e os cards colapsavam em ~22px — aparecendo como três barras
-   escuras. Por isso a altura é definida explicitamente. */
+   escuras. Por isso a altura é definida explicitamente.
+
+   A galeria some quando não há itens em CONFIG.portfolio.sistemas: o
+   app.js marca `hidden`, mas `display: grid` abaixo venceria o `display:
+   none` do atributo, então a regra explícita é obrigatória. Sem ela sobrava
+   a margem-top de um bloco vazio. */
 .bento-sistemas {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(14px, 2vw, 22px);
   margin-top: clamp(34px, 5vw, 60px);
 }
+
+.bento-sistemas[hidden] { display: none; }
 
 .bento-sistemas .bento__item {
   grid-column: auto;

@@ -603,33 +603,17 @@ window.CONFIG = {
       }
     ],
 
-    /* Sistemas web */
-    sistemas: [
-      {
-        titulo: "Sistema de Gestão de Lotações",
-        categoria: "Sistema",
-        imagem: "assets/images/portfolio/sistemas/gestao-lotacoes.svg",
-        descricao: "Painel para controle de entradas, cadastro de clientes e relatórios de ocupação.",
-        url: "#",
-        tags: ["Dashboard", "Relatórios"]
-      },
-      {
-        titulo: "Dashboard Administrativo",
-        categoria: "Sistema",
-        imagem: "assets/images/portfolio/sistemas/dashboard.svg",
-        descricao: "Visão consolidada de indicadores do negócio com gráficos, filtros e tabelas.",
-        url: "#",
-        tags: ["Dashboard", "Indicadores"]
-      },
-      {
-        titulo: "Sistema de Formulários",
-        categoria: "Sistema",
-        imagem: "assets/images/portfolio/sistemas/formularios.svg",
-        descricao: "Formulários validados que organizam solicitações e alimentam o painel de controle.",
-        url: "#",
-        tags: ["Formulários", "Automação"]
-      }
-    ],
+    /* Sistemas web — galeria de telas de sistema.
+       Vazio de propósito: as três telas de exemplo (gestão de lotações,
+       dashboard administrativo e sistema de formulários) foram removidas
+       por não serem trabalhos entregues. Enquanto a lista estiver vazia,
+       o app.js esconde a galeria inteira (ver "if (!projetos.length)").
+
+       Para voltar a exibir telas reais, adicione aqui os objetos no mesmo
+       formato dos itens de "sites" (titulo, categoria, imagem, descricao,
+       url, tags). A imagem deve existir em assets/images/portfolio/sistemas/.
+       Sem itens, a galeria simplesmente não aparece — nada fica quebrado. */
+    sistemas: [],
 
     /* Design gráfico — galeria com lightbox */
     design: [
