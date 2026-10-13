@@ -514,8 +514,8 @@ window.CONFIG = {
       id: "projeto-01",
       titulo: "Projeto 01 — Oficina Mecânica",
       categoria: "Site institucional",
-      antes: "assets/images/before-after/projeto-01/antes.svg",
-      depois: "assets/images/before-after/projeto-01/depois.svg",
+      antes: "assets/images/before-after/projeto-01/antes.webp",
+      depois: "assets/images/before-after/projeto-01/depois.webp",
       antesLabel: "Presença digital limitada",
       depoisLabel: "Site profissional",
       descricao: "Antes, a oficina dependia de um perfil de rede social com informações soltas. Hoje tem site próprio com serviços, fotos da estrutura e contato por WhatsApp."
@@ -524,8 +524,8 @@ window.CONFIG = {
       id: "projeto-02",
       titulo: "Projeto 02 — Barbearia",
       categoria: "Comércio e serviços",
-      antes: "assets/images/before-after/projeto-02/antes.svg",
-      depois: "assets/images/before-after/projeto-02/depois.svg",
+      antes: "assets/images/before-after/projeto-02/antes.webp",
+      depois: "assets/images/before-after/projeto-02/depois.webp",
       antesLabel: "Apenas redes sociais",
       depoisLabel: "Site com apresentação dos serviços",
       descricao: "De posts avulsos para uma página própria com apresentação dos serviços, horários, localização e galeria de trabalhos."
@@ -534,21 +534,11 @@ window.CONFIG = {
       id: "projeto-03",
       titulo: "Projeto 03 — Empresa de Pisos",
       categoria: "Portfólio",
-      antes: "assets/images/before-after/projeto-03/antes.svg",
-      depois: "assets/images/before-after/projeto-03/depois.svg",
+      antes: "assets/images/before-after/projeto-03/antes.webp",
+      depois: "assets/images/before-after/projeto-03/depois.webp",
       antesLabel: "Divulgação básica",
       depoisLabel: "Site com portfólio",
       descricao: "A empresa tinha apenas um card de divulgação. O novo site mostra os serviços instalados, galeria de ambientes e atendimento por WhatsApp."
-    },
-    {
-      id: "projeto-04",
-      titulo: "Projeto 04 — Identidade Visual",
-      categoria: "Design e marca",
-      antes: "assets/images/before-after/projeto-04/antes.svg",
-      depois: "assets/images/before-after/projeto-04/depois.svg",
-      antesLabel: "Material visual antigo",
-      depoisLabel: "Nova apresentação de marca",
-      descricao: "Logo, paleta de cores e materiais de divulgação reorganizados para passar uma imagem consistente em todos os pontos de contato."
     }
   ],
 

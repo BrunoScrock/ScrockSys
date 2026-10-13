@@ -2364,7 +2364,14 @@ ul, ol { list-style: none; }
 .comparador {
   --pos: 50%;
   position: relative;
-  aspect-ratio: 16 / 11;
+  /*
+   * 2,05:1 é a proporção real das fotos de antes/depois (screenshots de
+   * desktop, todas reexportadas em 1000x488). Com o antigo 16/11 o
+   * `object-fit: cover` cortava ~30% da largura da imagem. Mantendo o
+   * container na mesma proporção, o cover não corta nada e o antes/depois
+   * alinha exatamente na mesma região da tela.
+   */
+  aspect-ratio: 2.05 / 1;
   overflow: hidden;
   background: var(--cinza-medio);
   cursor: ew-resize;
