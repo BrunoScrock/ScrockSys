@@ -3998,7 +3998,23 @@ ul, ol { list-style: none; }
   .bento__descricao { max-height: 300px; opacity: 1; }
   .bento__acao { opacity: 1; transform: none; }
 
-  .cartao-preco::after { display: none; }
+  .cartao-preco::after {
+    /* A fita de "referência" volta no celular, adaptada ao card estreito.
+
+       No desktop ela usa rotate(38deg) com right:-36px e top:24px. Com o
+       `overflow: hidden` do card, a ponta esquerda da fita sobe acima da
+       borda superior e é cortada -- em telas estreitas sobrava so o fim
+       da palavra ("ERENCIA"). Por isso aqui a rotação cai para 32deg e o
+       `top` sobe para 34px, empurrando a fita para baixo o bastante para
+       caber inteira, com right:2px para não sair pela direita. */
+    display: block;
+    top: 34px;
+    right: 2px;
+    padding: 4px 20px;
+    font-size: .52rem;
+    letter-spacing: .09em;
+    transform: rotate(32deg);
+  }
 
   .dica-uso { align-items: flex-start; text-align: left; }
 
