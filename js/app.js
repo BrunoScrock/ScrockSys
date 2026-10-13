@@ -707,7 +707,15 @@
             "Comparação antes e depois: " + projeto.titulo +
             ". Use as setas do teclado para mover a alça."
         }, [
-          /* Imagem "depois" como base */
+          /* Imagem "depois" como base.
+             A ordem define o que aparece em cada lado da alça. A camada
+             recortada usa `clip-path: inset(0 calc(100% - --pos) 0 0)`, ou
+             seja, ela ocupa de 0 até --pos. Então:
+               pos 0   -> só a base:          tela toda "depois"
+               pos 50  -> esquerda antes, direita depois
+               pos 100 -> só a camada:        tela toda "antes"
+             É esse comportamento que o CSS das tags assume (ver
+             `.comparador[data-extremo=...]` em style.css). */
           U.criarEl("img", {
             class: "comparador__imagem",
             src: projeto.depois,

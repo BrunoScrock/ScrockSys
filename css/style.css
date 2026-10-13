@@ -2465,8 +2465,14 @@ ul, ol { list-style: none; }
   box-shadow: 0 6px 16px rgba(29, 92, 255, .4);
 }
 
-.comparador[data-extremo="inicio"] .comparador__tag--depois { opacity: 0; }
-.comparador[data-extremo="fim"] .comparador__tag--antes { opacity: 0; }
+/*
+ * A tag que some é sempre a do lado que NÃO está visível.
+ * A alça em 0% deixa a tela toda "depois" (a camada do "antes", recortada,
+ * tem largura zero). Em 100% deixa a tela toda "antes". As regras estavam
+ * trocadas: escondiam a tag do lado visível e mostravam a do invisível.
+ */
+.comparador[data-extremo="inicio"] .comparador__tag--antes { opacity: 0; }
+.comparador[data-extremo="fim"] .comparador__tag--depois { opacity: 0; }
 
 .comparador__info { padding: 20px 22px 22px; }
 
