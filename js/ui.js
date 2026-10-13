@@ -571,8 +571,16 @@ window.UI = (function () {
 
       var chave = gatilho.dataset.lightbox;
       var lista = [];
+      var indiceGatilho = -1;
 
-      U.$$('[data-lightbox="' + chave + '"]').forEach(function (elemento) {
+      /*
+       * O índice do item clicado precisa ser guardado aqui, no mesmo
+       * forEach. Antes usava `lista.indexOf(gatilho)` depois do laço, mas a
+       * lista guarda objetos novos (não os elementos do DOM), então a
+       * busca nunca encontrava `gatilho`, devolvia -1 e o `abrir()`
+       * caía no índice 0 — abrindo sempre o primeiro projeto.
+       */
+      U.$$('[data-lightbox="' + chave + '"]').forEach(function (elemento, posicao) {
         lista.push({
           elemento: elemento,
           imagem: elemento.dataset.imagem,
@@ -582,9 +590,12 @@ window.UI = (function () {
           url: elemento.dataset.url,
           tags: (elemento.dataset.tags || "").split("|").filter(Boolean)
         });
+        if (elemento === gatilho) indiceGatilho = posicao;
       });
 
-      if (lista.length) abrir(lista, lista.indexOf(gatilho));
+      if (!lista.length) return;
+      if (indiceGatilho < 0) indiceGatilho = 0;
+      abrir(lista, indiceGatilho);
     });
 
     U.$$("[data-fechar-lightbox]", lightbox).forEach(function (elemento) {
