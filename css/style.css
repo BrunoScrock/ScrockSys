@@ -4118,8 +4118,38 @@ ul, ol { list-style: none; }
   .filtros::-webkit-scrollbar { display: none; }
   .filtro { flex: none; }
 
-  .peca__info { opacity: 1; }
+.peca__info { opacity: 1; }
   .peca__info strong { font-size: .78rem; }
+
+  /*
+   * Duas colunas em TODO o celular, não só nos menores.
+   *
+   * A regra base é `auto-fill minmax(min(100%, 220px), 1fr)`: entre 401px
+   * e ~520px cabem só ~190px por coluna depois do padding, ou seja, o
+   * mínimo de 220px não fecha duas colunas e o `auto-fill` degrada para
+   * UMA coluna. Ali o card ficava com ~380–440px de lado e a seção
+   * crescia para mais de 3700px, obrigando a rolar muito. Esse era o pior
+   * caso e afetava justamente os celulares mais comuns (414px, 430px).
+   *
+   * Duas colunas fixas resolvem: 8 peças passam de ~3700px para ~800px.
+   */
+  .galeria-design { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /*
+   * A legenda fica sempre visível no celular (não há hover), então precisa
+   * de uma faixa mais alta e mais escura que a de desktop: nas peças de
+   * design o texto do próprio artwork também fica embaixo, e com o
+   * gradiente curto os dois textos se misturavam.
+   */
+  .peca__info {
+    padding: 34px 12px 12px;
+    background: linear-gradient(180deg,
+      transparent,
+      rgba(6, 16, 41, .62) 42%,
+      rgba(6, 16, 41, .96));
+  }
+  .peca__info strong { font-size: .72rem; text-shadow: 0 1px 4px rgba(0, 0, 0, .5); }
+  .peca__info small { font-size: .58rem; }
 }
 
 /* Celular pequeno (320px–380px) */
@@ -4135,7 +4165,10 @@ ul, ol { list-style: none; }
   .bento__item--destaque { height: 285px; }
   .bento__sobreposicao { padding: 16px; }
 
-  .galeria-design { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* .galeria-design já é 2 colunas desde 560px; aqui só encolhe a legenda. */
+  .peca__info { padding: 30px 11px 11px; }
+  .peca__info strong { font-size: .68rem; }
+  .peca__info small { font-size: .55rem; }
 
   .comparador__tag { font-size: .58rem; padding: 5px 10px; top: 10px; }
   .comparador__tag--antes { left: 10px; }
