@@ -4001,14 +4001,17 @@ ul, ol { list-style: none; }
   .cartao-preco::after {
     /* A fita de "referência" volta no celular, adaptada ao card estreito.
 
-       No desktop ela usa rotate(38deg) com right:-36px e top:24px. Com o
-       `overflow: hidden` do card, a ponta esquerda da fita sobe acima da
-       borda superior e é cortada -- em telas estreitas sobrava so o fim
-       da palavra ("ERENCIA"). Por isso aqui a rotação cai para 32deg e o
-       `top` sobe para 34px, empurrando a fita para baixo o bastante para
-       caber inteira, com right:2px para não sair pela direita. */
+       No desktop: rotate(38deg), right:-36px, top:24px. Duas coisas
+       impedem copiar isso no celular. O card tem `overflow: hidden`, e a
+       rotação faz a ponta ESQUERDA da fita subir acima da borda superior
+       — com top:24px ela era cortada e aparecia só o fim da palavra
+       ("ERENCIA"). E com right:-36px a ponta direita saía do card.
+
+       Aqui a rotação cai para 32deg (sobe menos), right:2px (não sai pela
+       direita) e top:54px, que é o suficiente para a fita inteira caber
+       dentro do card na menor largura testada (320px). */
     display: block;
-    top: 34px;
+    top: 54px;
     right: 2px;
     padding: 4px 20px;
     font-size: .52rem;
