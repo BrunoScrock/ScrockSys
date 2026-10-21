@@ -83,7 +83,7 @@ window.CONFIG = {
      ========================================================================== */
 
   /* Somente dígitos: 55 + DDD + número. Ex.: 5541999999999 */
-  whatsapp: "[INSERIR WHATSAPP]",
+  whatsapp: "5541987869868",
 
   /* Ex.: (41) 99999-9999 */
   telefone: "[INSERIR TELEFONE]",
